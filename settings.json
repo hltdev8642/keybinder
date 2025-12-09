@@ -1,0 +1,15 @@
+{
+  "directories": [
+    "C:/Program Files (x86)/Steam/steamapps/workshop/content/1167630",
+    "C:/Users/jared/Documents/Teardown/mods"
+  ],
+  "output_dir": "C:/Users/jared/Documents/_TEARDOWN/_DEV/keybinder/output",
+  "custom_patterns": "",
+  "case_insensitive": true,
+  "whole_word": false,
+  "json_format": true,
+  "csv_format": true,
+  "max_file_size": 10485760,
+  "encoding": "utf-8",
+  "geometry": "1280x729+26+26"
+}

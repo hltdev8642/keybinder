@@ -19,6 +19,9 @@ class KeybindScannerGUI:
         self.root.title("Teardown Mod Keybind Scanner")
         self.root.geometry("800x600")
 
+        # Settings file
+        self.settings_file = Path(__file__).parent / "settings.json"
+
         # Scanner instance
         self.scanner = None
         self.scan_thread = None
@@ -34,7 +37,67 @@ class KeybindScannerGUI:
         self.max_file_size = tk.IntVar(value=10*1024*1024)
         self.encoding = tk.StringVar(value="utf-8")
 
+        # Load settings
+        self.load_settings()
+
         self.create_widgets()
+
+        # Update UI with loaded settings
+        self.update_dir_listbox()
+
+        # Save settings on close
+        self.root.protocol("WM_DELETE_WINDOW", self.on_close)
+
+    def load_settings(self):
+        """Load settings from file."""
+        try:
+            if self.settings_file.exists():
+                with open(self.settings_file, 'r', encoding='utf-8') as f:
+                    settings = json.load(f)
+                
+                # Apply settings
+                self.directories = settings.get('directories', [])
+                self.output_dir.set(settings.get('output_dir', 'output'))
+                self.custom_patterns.set(settings.get('custom_patterns', ''))
+                self.case_insensitive.set(settings.get('case_insensitive', False))
+                self.whole_word.set(settings.get('whole_word', False))
+                self.json_format.set(settings.get('json_format', True))
+                self.csv_format.set(settings.get('csv_format', False))
+                self.max_file_size.set(settings.get('max_file_size', 10*1024*1024))
+                self.encoding.set(settings.get('encoding', 'utf-8'))
+                
+                # Window geometry
+                geometry = settings.get('geometry')
+                if geometry:
+                    self.root.geometry(geometry)
+        except Exception as e:
+            logging.warning(f"Failed to load settings: {e}")
+
+    def save_settings(self):
+        """Save current settings to file."""
+        try:
+            settings = {
+                'directories': self.directories,
+                'output_dir': self.output_dir.get(),
+                'custom_patterns': self.custom_patterns.get(),
+                'case_insensitive': self.case_insensitive.get(),
+                'whole_word': self.whole_word.get(),
+                'json_format': self.json_format.get(),
+                'csv_format': self.csv_format.get(),
+                'max_file_size': self.max_file_size.get(),
+                'encoding': self.encoding.get(),
+                'geometry': self.root.geometry()
+            }
+            
+            with open(self.settings_file, 'w', encoding='utf-8') as f:
+                json.dump(settings, f, indent=2, ensure_ascii=False)
+        except Exception as e:
+            logging.warning(f"Failed to save settings: {e}")
+
+    def on_close(self):
+        """Handle window close event."""
+        self.save_settings()
+        self.root.destroy()
 
     def create_widgets(self):
         # Main frame
@@ -237,6 +300,9 @@ class KeybindScannerGUI:
                 summary += f"  {keybind}: {count} occurrence{'s' if count != 1 else ''}\n"
 
         messagebox.showinfo("Scan Results", summary)
+        
+        # Save settings after successful scan
+        self.save_settings()
 
     def scan_complete(self):
         self.run_button.config(state='normal')

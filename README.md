@@ -45,6 +45,10 @@ The GUI provides an intuitive interface for:
 - Running scans with progress indication
 - Viewing logs and results
 
+**Persistent Settings**: The GUI remembers your last used directories, output settings, and window position between sessions.
+
+**Persistent Settings**: The GUI remembers your last used directories, output settings, and window position between sessions.
+
 **Note:** The GUI requires Tkinter, which is included with Python by default on most systems.
 
 ### Arguments (CLI)

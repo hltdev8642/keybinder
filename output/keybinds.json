@@ -17671,6 +17671,1438 @@
       "context": "if not InputDown(\"lmb\") and grabbed[1][1] ~= \"\" then",
       "matched_text": "InputDown(\"lmb\")",
       "mod_name": "Connections API"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\2889709870\\main.lua",
+      "line_number": 162,
+      "key_name": "pageup",
+      "context": "if InputPressed(\"pageup\") then",
+      "matched_text": "InputPressed(\"pageup\")",
+      "mod_name": "Impact Based Structural Integrity Test"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\2889709870\\main.lua",
+      "line_number": 165,
+      "key_name": "pagedown",
+      "context": "if InputPressed(\"pagedown\") then",
+      "matched_text": "InputPressed(\"pagedown\")",
+      "mod_name": "Impact Based Structural Integrity Test"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\2889709870\\main.lua",
+      "line_number": 168,
+      "key_name": "f9",
+      "context": "if InputPressed(\"f9\") then -- toggle debug overlay feature 11",
+      "matched_text": "InputPressed(\"f9\")",
+      "mod_name": "Impact Based Structural Integrity Test"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\3067970452\\main.lua",
+      "line_number": 461,
+      "key_name": "pause",
+      "context": "if hudVisible and InputPressed(\"pause\") then",
+      "matched_text": "InputPressed(\"pause\")",
+      "mod_name": "Smoke Gun With Even More Extra Options"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\3067970452\\main.lua",
+      "line_number": 467,
+      "key_name": "h",
+      "context": "if toolSelected and InputPressed(\"h\") then",
+      "matched_text": "InputPressed(\"h\")",
+      "mod_name": "Smoke Gun With Even More Extra Options"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\3067970452\\main.lua",
+      "line_number": 477,
+      "key_name": "m",
+      "context": "if toolSelected and InputPressed(\"m\") then",
+      "matched_text": "InputPressed(\"m\")",
+      "mod_name": "Smoke Gun With Even More Extra Options"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\3067970452\\main.lua",
+      "line_number": 500,
+      "key_name": "usetool",
+      "context": "if InputPressed(\"usetool\") then",
+      "matched_text": "InputPressed(\"usetool\")",
+      "mod_name": "Smoke Gun With Even More Extra Options"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\3067970452\\main.lua",
+      "line_number": 521,
+      "key_name": "usetool",
+      "context": "if InputReleased(\"usetool\") and mode == \"Continuous\" then",
+      "matched_text": "InputReleased(\"usetool\")",
+      "mod_name": "Smoke Gun With Even More Extra Options"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\3067970452\\main.lua",
+      "line_number": 528,
+      "key_name": "r",
+      "context": "if toolSelected and InputPressed(\"r\") then",
+      "matched_text": "InputPressed(\"r\")",
+      "mod_name": "Smoke Gun With Even More Extra Options"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\3067970452\\main.lua",
+      "line_number": 533,
+      "key_name": "grab",
+      "context": "if toolSelected and InputPressed(\"grab\") and aimHitPoint then",
+      "matched_text": "InputPressed(\"grab\")",
+      "mod_name": "Smoke Gun With Even More Extra Options"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\3067970452\\main.lua",
+      "line_number": 690,
+      "key_name": "pause",
+      "context": "if UiTextButton(\"Close\", 180, 32) or InputPressed(\"pause\") then",
+      "matched_text": "InputPressed(\"pause\")",
+      "mod_name": "Smoke Gun With Even More Extra Options"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\Artzert's Utilities [TDMP] Copy\\main.lua",
+      "line_number": 268,
+      "key_name": "up",
+      "context": "if (InputDown(\"up\")) then",
+      "matched_text": "InputDown(\"up\")",
+      "mod_name": "Artzert's Utilities [TDMP]"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\Artzert's Utilities [TDMP] Copy\\main.lua",
+      "line_number": 271,
+      "key_name": "down",
+      "context": "if (InputDown(\"down\")) then",
+      "matched_text": "InputDown(\"down\")",
+      "mod_name": "Artzert's Utilities [TDMP]"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\Artzert's Utilities [TDMP] Copy\\main.lua",
+      "line_number": 274,
+      "key_name": "left",
+      "context": "if (InputDown(\"left\")) then",
+      "matched_text": "InputDown(\"left\")",
+      "mod_name": "Artzert's Utilities [TDMP]"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\Artzert's Utilities [TDMP] Copy\\main.lua",
+      "line_number": 277,
+      "key_name": "right",
+      "context": "if (InputDown(\"right\")) then",
+      "matched_text": "InputDown(\"right\")",
+      "mod_name": "Artzert's Utilities [TDMP]"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\Artzert's Utilities [TDMP] Copy\\main.lua",
+      "line_number": 280,
+      "key_name": "space",
+      "context": "if (InputDown(\"space\")) then",
+      "matched_text": "InputDown(\"space\")",
+      "mod_name": "Artzert's Utilities [TDMP]"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\Artzert's Utilities [TDMP] Copy\\main.lua",
+      "line_number": 290,
+      "key_name": "mousedx",
+      "context": "local dx, dy = InputValue(\"mousedx\"), InputValue(\"mousedy\")",
+      "matched_text": "InputValue(\"mousedx\")",
+      "mod_name": "Artzert's Utilities [TDMP]"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\Artzert's Utilities [TDMP] Copy\\main.lua",
+      "line_number": 290,
+      "key_name": "mousedy",
+      "context": "local dx, dy = InputValue(\"mousedx\"), InputValue(\"mousedy\")",
+      "matched_text": "InputValue(\"mousedy\")",
+      "mod_name": "Artzert's Utilities [TDMP]"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\Artzert's Utilities [TDMP] Copy\\main.lua",
+      "line_number": 342,
+      "key_name": "up",
+      "context": "if (InputDown(\"up\")) then",
+      "matched_text": "InputDown(\"up\")",
+      "mod_name": "Artzert's Utilities [TDMP]"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\Artzert's Utilities [TDMP] Copy\\main.lua",
+      "line_number": 346,
+      "key_name": "left",
+      "context": "if (InputDown(\"left\")) then",
+      "matched_text": "InputDown(\"left\")",
+      "mod_name": "Artzert's Utilities [TDMP]"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\Artzert's Utilities [TDMP] Copy\\main.lua",
+      "line_number": 350,
+      "key_name": "down",
+      "context": "if (InputDown(\"down\")) then",
+      "matched_text": "InputDown(\"down\")",
+      "mod_name": "Artzert's Utilities [TDMP]"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\Artzert's Utilities [TDMP] Copy\\main.lua",
+      "line_number": 354,
+      "key_name": "right",
+      "context": "if (InputDown(\"right\")) then",
+      "matched_text": "InputDown(\"right\")",
+      "mod_name": "Artzert's Utilities [TDMP]"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\Artzert's Utilities [TDMP] Copy\\main.lua",
+      "line_number": 358,
+      "key_name": "space",
+      "context": "if (InputDown(\"space\")) then",
+      "matched_text": "InputDown(\"space\")",
+      "mod_name": "Artzert's Utilities [TDMP]"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\Artzert's Utilities [TDMP] Copy\\main.lua",
+      "line_number": 615,
+      "key_name": "lmb",
+      "context": "if InputPressed(\"lmb\") and (IGM.changingkb == false) then",
+      "matched_text": "InputPressed(\"lmb\")",
+      "mod_name": "Artzert's Utilities [TDMP]"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\Artzert's Utilities [TDMP] Copy\\main.lua",
+      "line_number": 648,
+      "key_name": "lmb",
+      "context": "if InputPressed(\"lmb\") and (IGM.changingkb == false) then",
+      "matched_text": "InputPressed(\"lmb\")",
+      "mod_name": "Artzert's Utilities [TDMP]"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\Artzert's Utilities [TDMP] Copy\\main.lua",
+      "line_number": 864,
+      "key_name": "mousewheel",
+      "context": "IGM.scroll = IGM.scroll - InputValue(\"mousewheel\")*30",
+      "matched_text": "InputValue(\"mousewheel\")",
+      "mod_name": "Artzert's Utilities [TDMP]"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\Artzert's Utilities [TDMP] Copy\\main.lua",
+      "line_number": 1701,
+      "key_name": "space",
+      "context": "or fly.cog) and (InputDown(fly.DownKey)) and (not InputDown(\"space\")) and (fly.state == \"flying\") then",
+      "matched_text": "InputDown(\"space\")",
+      "mod_name": "Artzert's Utilities [TDMP]"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\Artzert's Utilities [TDMP] Copy\\main.lua",
+      "line_number": 2050,
+      "key_name": "esc",
+      "context": "Button(\"Artzert's Utils\", false) or (IGM.open and InputPressed(\"esc\")) then",
+      "matched_text": "InputPressed(\"esc\")",
+      "mod_name": "Artzert's Utilities [TDMP]"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\Artzert's Utilities [TDMP] Copy\\main.lua",
+      "line_number": 2649,
+      "key_name": "lmb",
+      "context": "if InputReleased(\"lmb\") then",
+      "matched_text": "InputReleased(\"lmb\")",
+      "mod_name": "Artzert's Utilities [TDMP]"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\Artzert's Utilities [TDMP] Copy\\main.lua",
+      "line_number": 2671,
+      "key_name": "lmb",
+      "context": "hysgun\" and (not omnitool.disablePhysI)) and (not InputDown(\"lmb\"))) and (global.playervh == 0) then",
+      "matched_text": "InputDown(\"lmb\")",
+      "mod_name": "Artzert's Utilities [TDMP]"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\Artzert's Utilities [TDMP] Copy\\main.lua",
+      "line_number": 3048,
+      "key_name": "lmb",
+      "context": "hysgun\" and (not omnitool.disablePhysI)) and (not InputDown(\"lmb\"))) and (global.playervh == 0) and (not library.kbh",
+      "matched_text": "InputDown(\"lmb\")",
+      "mod_name": "Artzert's Utilities [TDMP]"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\Artzert's Utilities [TDMP] Copy\\options.lua",
+      "line_number": 617,
+      "key_name": "lmb",
+      "context": "if InputPressed(\"lmb\") and (global.changingkb == false) then",
+      "matched_text": "InputPressed(\"lmb\")",
+      "mod_name": "Artzert's Utilities [TDMP]"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\Artzert's Utilities [TDMP] Copy\\options.lua",
+      "line_number": 656,
+      "key_name": "lmb",
+      "context": "if InputPressed(\"lmb\") and (global.changingkb == false) then",
+      "matched_text": "InputPressed(\"lmb\")",
+      "mod_name": "Artzert's Utilities [TDMP]"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\Artzert's Utilities [TDMP] Copy\\options.lua",
+      "line_number": 825,
+      "key_name": "mousewheel",
+      "context": "global.scroll = global.scroll - InputValue(\"mousewheel\")*30",
+      "matched_text": "InputValue(\"mousewheel\")",
+      "mod_name": "Artzert's Utilities [TDMP]"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\Bigger Water simulation Copy\\main.lua",
+      "line_number": 12,
+      "key_name": "t",
+      "context": "if InputDown(\"t\") then",
+      "matched_text": "InputDown(\"t\")",
+      "mod_name": "Bigger Water simulation"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\devcon\\main.lua",
+      "line_number": 99,
+      "key_name": "home",
+      "context": "if InputPressed and InputPressed(\"home\") then",
+      "matched_text": "InputPressed(\"home\")",
+      "mod_name": "Lua Console Overlay Mod"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\devcon\\main.lua",
+      "line_number": 108,
+      "key_name": "return",
+      "context": "if InputPressed and InputPressed(\"return\") then",
+      "matched_text": "InputPressed(\"return\")",
+      "mod_name": "Lua Console Overlay Mod"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\devcon\\main.lua",
+      "line_number": 115,
+      "key_name": "tab",
+      "context": "elseif InputPressed and InputPressed(\"tab\") then",
+      "matched_text": "InputPressed(\"tab\")",
+      "mod_name": "Lua Console Overlay Mod"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\devcon\\main.lua",
+      "line_number": 162,
+      "key_name": "end",
+      "context": "elseif InputPressed and InputPressed(\"end\") then",
+      "matched_text": "InputPressed(\"end\")",
+      "mod_name": "Lua Console Overlay Mod"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\devcon\\main.lua",
+      "line_number": 169,
+      "key_name": "uparrow",
+      "context": "elseif InputPressed and InputPressed(\"uparrow\") then",
+      "matched_text": "InputPressed(\"uparrow\")",
+      "mod_name": "Lua Console Overlay Mod"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\devcon\\main.lua",
+      "line_number": 182,
+      "key_name": "downarrow",
+      "context": "elseif InputPressed and InputPressed(\"downarrow\") then",
+      "matched_text": "InputPressed(\"downarrow\")",
+      "mod_name": "Lua Console Overlay Mod"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\devcon\\main.lua",
+      "line_number": 206,
+      "key_name": "mousewheel",
+      "context": "local wheel = InputValue and InputValue(\"mousewheel\") or 0",
+      "matched_text": "InputValue(\"mousewheel\")",
+      "mod_name": "Lua Console Overlay Mod"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\devcon\\main.lua",
+      "line_number": 270,
+      "key_name": "usetool",
+      "context": "if InputPressed and InputPressed(\"usetool\") then",
+      "matched_text": "InputPressed(\"usetool\")",
+      "mod_name": "Lua Console Overlay Mod"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\devcon\\main.lua",
+      "line_number": 295,
+      "key_name": "usetool",
+      "context": "if InputPressed and InputPressed(\"usetool\") then",
+      "matched_text": "InputPressed(\"usetool\")",
+      "mod_name": "Lua Console Overlay Mod"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\devcon\\main.lua",
+      "line_number": 3764,
+      "key_name": "space",
+      "context": "pressed = InputPressed and InputPressed(\"space\")",
+      "matched_text": "InputPressed(\"space\")",
+      "mod_name": "Lua Console Overlay Mod"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\devcon\\main.lua",
+      "line_number": 3766,
+      "key_name": "return",
+      "context": "pressed = InputPressed and InputPressed(\"return\")",
+      "matched_text": "InputPressed(\"return\")",
+      "mod_name": "Lua Console Overlay Mod"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\devcon\\main.lua",
+      "line_number": 3768,
+      "key_name": "tab",
+      "context": "pressed = InputPressed and InputPressed(\"tab\")",
+      "matched_text": "InputPressed(\"tab\")",
+      "mod_name": "Lua Console Overlay Mod"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\devcon\\main.lua",
+      "line_number": 3770,
+      "key_name": "escape",
+      "context": "pressed = InputPressed and InputPressed(\"escape\")",
+      "matched_text": "InputPressed(\"escape\")",
+      "mod_name": "Lua Console Overlay Mod"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\devcon\\lasertool\\main.lua",
+      "line_number": 44,
+      "key_name": "usetool",
+      "context": "if InputPressed(\"usetool\") then",
+      "matched_text": "InputPressed(\"usetool\")",
+      "mod_name": "Lua Console Overlay Mod"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\devconsole\\main.lua",
+      "line_number": 117,
+      "key_name": "J",
+      "context": "if InputPressed(\"J\") then",
+      "matched_text": "InputPressed(\"J\")",
+      "mod_name": "devconsole"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\devconsole\\main.lua",
+      "line_number": 122,
+      "key_name": "esc",
+      "context": "if InputPressed(\"esc\") then",
+      "matched_text": "InputPressed(\"esc\")",
+      "mod_name": "devconsole"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\GMod-esque Menu Copy\\main.lua",
+      "line_number": 95,
+      "key_name": "mousewheel",
+      "context": ", math.min(8.0 + shi.spawnRadius, shi.spawnDist + InputValue(\"mousewheel\")))",
+      "matched_text": "InputValue(\"mousewheel\")",
+      "mod_name": "GMod-esque Menu"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\GMod-esque Menu Copy\\main.lua",
+      "line_number": 111,
+      "key_name": "ctrl",
+      "context": "shi.spStatic = InputDown(\"ctrl\")",
+      "matched_text": "InputDown(\"ctrl\")",
+      "mod_name": "GMod-esque Menu"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\GMod-esque Menu Copy\\main.lua",
+      "line_number": 114,
+      "key_name": "pause",
+      "context": "if InputPressed(\"pause\") then",
+      "matched_text": "InputPressed(\"pause\")",
+      "mod_name": "GMod-esque Menu"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\GMod-esque Menu Copy\\main.lua",
+      "line_number": 169,
+      "key_name": "usetool",
+      "context": "if InputPressed(\"usetool\") then",
+      "matched_text": "InputPressed(\"usetool\")",
+      "mod_name": "GMod-esque Menu"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\GMod-esque Menu Copy\\main.lua",
+      "line_number": 202,
+      "key_name": "shift",
+      "context": "if InputDown(\"shift\") and index then",
+      "matched_text": "InputDown(\"shift\")",
+      "mod_name": "GMod-esque Menu"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\GMod-esque Menu Copy\\main.lua",
+      "line_number": 215,
+      "key_name": "camerax",
+      "context": "local realX = InputValue(\"camerax\")",
+      "matched_text": "InputValue(\"camerax\")",
+      "mod_name": "GMod-esque Menu"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\GMod-esque Menu Copy\\main.lua",
+      "line_number": 216,
+      "key_name": "cameray",
+      "context": "local realY = InputValue(\"cameray\") * 2.5",
+      "matched_text": "InputValue(\"cameray\")",
+      "mod_name": "GMod-esque Menu"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\GMod-esque Menu Copy\\main.lua",
+      "line_number": 222,
+      "key_name": "shift",
+      "context": "if InputDown(\"shift\") then",
+      "matched_text": "InputDown(\"shift\")",
+      "mod_name": "GMod-esque Menu"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\GMod-esque Menu Copy\\main.lua",
+      "line_number": 224,
+      "key_name": "ctrl",
+      "context": "elseif InputDown(\"ctrl\") then",
+      "matched_text": "InputDown(\"ctrl\")",
+      "mod_name": "GMod-esque Menu"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\GMod-esque Menu Copy\\main.lua",
+      "line_number": 230,
+      "key_name": "x",
+      "context": "if InputDown(\"x\") then",
+      "matched_text": "InputDown(\"x\")",
+      "mod_name": "GMod-esque Menu"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\GMod-esque Menu Copy\\main.lua",
+      "line_number": 232,
+      "key_name": "v",
+      "context": "elseif InputDown(\"v\") then",
+      "matched_text": "InputDown(\"v\")",
+      "mod_name": "GMod-esque Menu"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\GMod-esque Menu Copy\\main.lua",
+      "line_number": 241,
+      "key_name": "camerax",
+      "context": "local realX = InputValue(\"camerax\")",
+      "matched_text": "InputValue(\"camerax\")",
+      "mod_name": "GMod-esque Menu"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\GMod-esque Menu Copy\\main.lua",
+      "line_number": 242,
+      "key_name": "cameray",
+      "context": "local realY = InputValue(\"cameray\") * 2.5",
+      "matched_text": "InputValue(\"cameray\")",
+      "mod_name": "GMod-esque Menu"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\GMod-esque Menu Copy\\main.lua",
+      "line_number": 248,
+      "key_name": "shift",
+      "context": "if InputDown(\"shift\") then",
+      "matched_text": "InputDown(\"shift\")",
+      "mod_name": "GMod-esque Menu"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\GMod-esque Menu Copy\\main.lua",
+      "line_number": 250,
+      "key_name": "ctrl",
+      "context": "elseif InputDown(\"ctrl\") then",
+      "matched_text": "InputDown(\"ctrl\")",
+      "mod_name": "GMod-esque Menu"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\GMod-esque Menu Copy\\main.lua",
+      "line_number": 1746,
+      "key_name": "mousewheel",
+      "context": "local scroll = InputValue(\"mousewheel\") * scroll_sensitivity",
+      "matched_text": "InputValue(\"mousewheel\")",
+      "mod_name": "GMod-esque Menu"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\GMod-esque Menu Copy\\main.lua",
+      "line_number": 1752,
+      "key_name": "pause",
+      "context": "if InputPressed(\"pause\") and not GMMRebinding.state then",
+      "matched_text": "InputPressed(\"pause\")",
+      "mod_name": "GMod-esque Menu"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\GMod-esque Menu Copy\\main.lua",
+      "line_number": 2056,
+      "key_name": "up",
+      "context": "ws = InputDown(\"up\") and -operations[\"walking_speed\"] * (1 + dt) or 0",
+      "matched_text": "InputDown(\"up\")",
+      "mod_name": "GMod-esque Menu"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\GMod-esque Menu Copy\\main.lua",
+      "line_number": 2057,
+      "key_name": "down",
+      "context": "ss = InputDown(\"down\") and operations[\"walking_speed\"] * (1 + dt) or 0",
+      "matched_text": "InputDown(\"down\")",
+      "mod_name": "GMod-esque Menu"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\GMod-esque Menu Copy\\main.lua",
+      "line_number": 2058,
+      "key_name": "left",
+      "context": "as = InputDown(\"left\") and -operations[\"walking_speed\"] * (1 + dt) or 0",
+      "matched_text": "InputDown(\"left\")",
+      "mod_name": "GMod-esque Menu"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\GMod-esque Menu Copy\\main.lua",
+      "line_number": 2059,
+      "key_name": "right",
+      "context": "ds = InputDown(\"right\") and operations[\"walking_speed\"] * (1 + dt) or 0]]",
+      "matched_text": "InputDown(\"right\")",
+      "mod_name": "GMod-esque Menu"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\GMod-esque Menu Copy\\main.lua",
+      "line_number": 2060,
+      "key_name": "up",
+      "context": "--if InputDown(\"up\") then ws = -operations[\"walking_speed\"] * multi el",
+      "matched_text": "InputDown(\"up\")",
+      "mod_name": "GMod-esque Menu"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\GMod-esque Menu Copy\\main.lua",
+      "line_number": 2061,
+      "key_name": "down",
+      "context": "--if InputDown(\"down\") then ss = operations[\"walking_speed\"] * multi els",
+      "matched_text": "InputDown(\"down\")",
+      "mod_name": "GMod-esque Menu"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\GMod-esque Menu Copy\\main.lua",
+      "line_number": 2062,
+      "key_name": "left",
+      "context": "--if InputDown(\"left\") then as = -operations[\"walking_speed\"] * multi el",
+      "matched_text": "InputDown(\"left\")",
+      "mod_name": "GMod-esque Menu"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\GMod-esque Menu Copy\\main.lua",
+      "line_number": 2063,
+      "key_name": "right",
+      "context": "--if InputDown(\"right\") then ds = operations[\"walking_speed\"] * multi els",
+      "matched_text": "InputDown(\"right\")",
+      "mod_name": "GMod-esque Menu"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\GMod-esque Menu Copy\\main.lua",
+      "line_number": 2464,
+      "key_name": "usetool",
+      "context": "if InputPressed(\"usetool\") then",
+      "matched_text": "InputPressed(\"usetool\")",
+      "mod_name": "GMod-esque Menu"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\GMod-esque Menu Copy\\main.lua",
+      "line_number": 2472,
+      "key_name": "grab",
+      "context": "elseif InputPressed(\"grab\") and not InputDown(operations[\"context_key\"]) then",
+      "matched_text": "InputPressed(\"grab\")",
+      "mod_name": "GMod-esque Menu"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\GMod-esque Menu Copy\\main.lua",
+      "line_number": 2479,
+      "key_name": "r",
+      "context": "elseif InputPressed(\"r\") then",
+      "matched_text": "InputPressed(\"r\")",
+      "mod_name": "GMod-esque Menu"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\GMod-esque Menu Copy\\main.lua",
+      "line_number": 3836,
+      "key_name": "lmb",
+      "context": "if InputDown(\"lmb\") then",
+      "matched_text": "InputDown(\"lmb\")",
+      "mod_name": "GMod-esque Menu"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\GMod-esque Menu Copy\\main.lua",
+      "line_number": 3939,
+      "key_name": "lmb",
+      "context": "if InputDown(\"lmb\") then",
+      "matched_text": "InputDown(\"lmb\")",
+      "mod_name": "GMod-esque Menu"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\GMod-esque Menu Copy\\main.lua",
+      "line_number": 3984,
+      "key_name": "lmb",
+      "context": "if not toolHover and InputPressed(\"lmb\") then",
+      "matched_text": "InputPressed(\"lmb\")",
+      "mod_name": "GMod-esque Menu"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\GMod-esque Menu Copy\\main.lua",
+      "line_number": 4469,
+      "key_name": "lmb",
+      "context": "local pressing = InputDown(\"lmb\")",
+      "matched_text": "InputDown(\"lmb\")",
+      "mod_name": "GMod-esque Menu"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\GMod-esque Menu Copy\\main.lua",
+      "line_number": 4470,
+      "key_name": "lmb",
+      "context": "local released = InputReleased(\"lmb\")",
+      "matched_text": "InputReleased(\"lmb\")",
+      "mod_name": "GMod-esque Menu"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\GMod-esque Menu Copy\\main.lua",
+      "line_number": 4671,
+      "key_name": "lmb",
+      "context": "if InputDown(\"lmb\") and operations[i..\"_focus\"] then",
+      "matched_text": "InputDown(\"lmb\")",
+      "mod_name": "GMod-esque Menu"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\GMod-esque Menu Copy\\main.lua",
+      "line_number": 4720,
+      "key_name": "rmb",
+      "context": "if not InputDown(\"rmb\") then",
+      "matched_text": "InputDown(\"rmb\")",
+      "mod_name": "GMod-esque Menu"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\GMod-esque Menu Copy\\main.lua",
+      "line_number": 4832,
+      "key_name": "rmb",
+      "context": "UiIsMouseInRect(grid_size + 2, grid_size + 2) and InputPressed(\"rmb\") then",
+      "matched_text": "InputPressed(\"rmb\")",
+      "mod_name": "GMod-esque Menu"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\GMod-esque Menu Copy\\main.lua",
+      "line_number": 4926,
+      "key_name": "usetool",
+      "context": "if UiIsMouseInRect(length + 20, 40) and InputDown(\"usetool\") then",
+      "matched_text": "InputDown(\"usetool\")",
+      "mod_name": "GMod-esque Menu"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\GMod-esque Menu Copy\\main.lua",
+      "line_number": 5969,
+      "key_name": "lmb",
+      "context": "local pressing = InputDown(\"lmb\")",
+      "matched_text": "InputDown(\"lmb\")",
+      "mod_name": "GMod-esque Menu"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\GMod-esque Menu Copy\\main.lua",
+      "line_number": 5970,
+      "key_name": "lmb",
+      "context": "local released = InputReleased(\"lmb\")",
+      "matched_text": "InputReleased(\"lmb\")",
+      "mod_name": "GMod-esque Menu"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\GMod-esque Menu Copy\\main.lua",
+      "line_number": 5987,
+      "key_name": "rmb",
+      "context": "if InputPressed(\"rmb\") then",
+      "matched_text": "InputPressed(\"rmb\")",
+      "mod_name": "GMod-esque Menu"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\GMod-esque Menu Copy\\main.lua",
+      "line_number": 6371,
+      "key_name": "usetool",
+      "context": "local pressing = InputDown(\"usetool\")",
+      "matched_text": "InputDown(\"usetool\")",
+      "mod_name": "GMod-esque Menu"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\GMod-esque Menu Copy\\main.lua",
+      "line_number": 6372,
+      "key_name": "usetool",
+      "context": "local released = InputReleased(\"usetool\")",
+      "matched_text": "InputReleased(\"usetool\")",
+      "mod_name": "GMod-esque Menu"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\GMod-esque Menu Copy\\main.lua",
+      "line_number": 6373,
+      "key_name": "rmb",
+      "context": "local rmbPressed = InputPressed and InputPressed(\"rmb\") or false",
+      "matched_text": "InputPressed(\"rmb\")",
+      "mod_name": "GMod-esque Menu"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\GMod-esque Menu Copy\\main.lua",
+      "line_number": 6377,
+      "key_name": "usetool",
+      "context": "local pressing = InputDown(\"usetool\")",
+      "matched_text": "InputDown(\"usetool\")",
+      "mod_name": "GMod-esque Menu"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\GMod-esque Menu Copy\\main.lua",
+      "line_number": 6378,
+      "key_name": "usetool",
+      "context": "local released = InputReleased(\"usetool\")",
+      "matched_text": "InputReleased(\"usetool\")",
+      "mod_name": "GMod-esque Menu"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\ingame_regedit\\main.lua",
+      "line_number": 69,
+      "key_name": "lmb",
+      "context": "if InputPressed(\"lmb\") then",
+      "matched_text": "InputPressed(\"lmb\")",
+      "mod_name": "MMRV: In-Game Registry Editor"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\ingame_regedit\\main.lua",
+      "line_number": 84,
+      "key_name": "mousewheel",
+      "context": "local wheel = InputValue(\"mousewheel\")",
+      "matched_text": "InputValue(\"mousewheel\")",
+      "mod_name": "MMRV: In-Game Registry Editor"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\ingame_regedit\\main.lua",
+      "line_number": 86,
+      "key_name": "shift",
+      "context": "reg.scroll = math.min(0, reg.scroll + wheel*(InputDown(\"shift\") and 4 or 1))",
+      "matched_text": "InputDown(\"shift\")",
+      "mod_name": "MMRV: In-Game Registry Editor"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\multiphysics\\ref\\prgd\\main.lua",
+      "line_number": 488,
+      "key_name": "-",
+      "context": "if InputDown(\"-\") then",
+      "matched_text": "InputDown(\"-\")",
+      "mod_name": "Multiphysics (PRGD + IBSIT + MBCS)"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\multiphysics\\ref\\prgd\\main.lua",
+      "line_number": 523,
+      "key_name": ".",
+      "context": "if InputPressed(\".\") and GetBool(\"savegame.mod.progdest.4ce_ENABLE_CON",
+      "matched_text": "InputPressed(\".\")",
+      "mod_name": "Multiphysics (PRGD + IBSIT + MBCS)"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\multiphysics\\ref\\prgd\\main.lua",
+      "line_number": 527,
+      "key_name": ",",
+      "context": "if InputPressed(\",\") and GetBool(\"savegame.mod.progdest.4ce_ENABLE_CON",
+      "matched_text": "InputPressed(\",\")",
+      "mod_name": "Multiphysics (PRGD + IBSIT + MBCS)"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\multiphysics\\ref\\prgd\\main.lua",
+      "line_number": 531,
+      "key_name": "m",
+      "context": "if InputPressed(\"m\") and GetBool(\"savegame.mod.progdest.4ce_ENABLE_CON",
+      "matched_text": "InputPressed(\"m\")",
+      "mod_name": "Multiphysics (PRGD + IBSIT + MBCS)"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\multiphysics\\ref\\prgd\\main.lua",
+      "line_number": 662,
+      "key_name": "-",
+      "context": "if InputDown(\"-\") and broken==true and math.random()<0.6 then",
+      "matched_text": "InputDown(\"-\")",
+      "mod_name": "Multiphysics (PRGD + IBSIT + MBCS)"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\multiphysics\\ref\\prgd\\options.lua",
+      "line_number": 339,
+      "key_name": "esc",
+      "context": "if UiTextButton(\"Close\", 80, 40) or InputPressed(\"esc\") then",
+      "matched_text": "InputPressed(\"esc\")",
+      "mod_name": "Multiphysics (PRGD + IBSIT + MBCS)"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\pcomb\\main.lua",
+      "line_number": 3512,
+      "key_name": "i",
+      "context": "if InputPressed(\"i\") and InputDown(\"ctrl\") then  -- Ctrl+P to open/clo",
+      "matched_text": "InputPressed(\"i\")",
+      "mod_name": "Physics Combination Mod"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\pcomb\\main.lua",
+      "line_number": 3512,
+      "key_name": "ctrl",
+      "context": "if InputPressed(\"i\") and InputDown(\"ctrl\") then  -- Ctrl+P to open/close menu",
+      "matched_text": "InputDown(\"ctrl\")",
+      "mod_name": "Physics Combination Mod"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\pcomb\\main.lua",
+      "line_number": 3518,
+      "key_name": "control",
+      "context": "if InputPressed(\"control\") and InputDown(\"tab\") then",
+      "matched_text": "InputPressed(\"control\")",
+      "mod_name": "Physics Combination Mod"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\pcomb\\main.lua",
+      "line_number": 3518,
+      "key_name": "tab",
+      "context": "if InputPressed(\"control\") and InputDown(\"tab\") then",
+      "matched_text": "InputDown(\"tab\")",
+      "mod_name": "Physics Combination Mod"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\pcomb\\main.lua",
+      "line_number": 3524,
+      "key_name": "tab",
+      "context": "elseif InputPressed(\"tab\") then",
+      "matched_text": "InputPressed(\"tab\")",
+      "mod_name": "Physics Combination Mod"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\pcomb\\main.lua",
+      "line_number": 3534,
+      "key_name": "escape",
+      "context": "if pauseMenuEnabled and InputPressed(\"escape\") then",
+      "matched_text": "InputPressed(\"escape\")",
+      "mod_name": "Physics Combination Mod"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\pcomb\\ref\\prgd\\main.lua",
+      "line_number": 488,
+      "key_name": "-",
+      "context": "if InputDown(\"-\") then",
+      "matched_text": "InputDown(\"-\")",
+      "mod_name": "Physics Combination Mod"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\pcomb\\ref\\prgd\\main.lua",
+      "line_number": 523,
+      "key_name": ".",
+      "context": "if InputPressed(\".\") and GetBool(\"savegame.mod.progdest.4ce_ENABLE_CON",
+      "matched_text": "InputPressed(\".\")",
+      "mod_name": "Physics Combination Mod"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\pcomb\\ref\\prgd\\main.lua",
+      "line_number": 527,
+      "key_name": ",",
+      "context": "if InputPressed(\",\") and GetBool(\"savegame.mod.progdest.4ce_ENABLE_CON",
+      "matched_text": "InputPressed(\",\")",
+      "mod_name": "Physics Combination Mod"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\pcomb\\ref\\prgd\\main.lua",
+      "line_number": 531,
+      "key_name": "m",
+      "context": "if InputPressed(\"m\") and GetBool(\"savegame.mod.progdest.4ce_ENABLE_CON",
+      "matched_text": "InputPressed(\"m\")",
+      "mod_name": "Physics Combination Mod"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\pcomb\\ref\\prgd\\main.lua",
+      "line_number": 662,
+      "key_name": "-",
+      "context": "if InputDown(\"-\") and broken==true and math.random()<0.6 then",
+      "matched_text": "InputDown(\"-\")",
+      "mod_name": "Physics Combination Mod"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\pcomb\\ref\\prgd\\options.lua",
+      "line_number": 339,
+      "key_name": "esc",
+      "context": "if UiTextButton(\"Close\", 80, 40) or InputPressed(\"esc\") then",
+      "matched_text": "InputPressed(\"esc\")",
+      "mod_name": "Physics Combination Mod"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\physall\\main.lua",
+      "line_number": 2323,
+      "key_name": "left",
+      "context": "(InputDown('left') and -1 or 0) + (InputDown('right') and 1 or 0),",
+      "matched_text": "InputDown('left')",
+      "mod_name": "Combined Physics Mod for Teardown"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\physall\\main.lua",
+      "line_number": 2323,
+      "key_name": "right",
+      "context": "(InputDown('left') and -1 or 0) + (InputDown('right') and 1 or 0),",
+      "matched_text": "InputDown('right')",
+      "mod_name": "Combined Physics Mod for Teardown"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\physall\\main.lua",
+      "line_number": 2324,
+      "key_name": "down",
+      "context": "(InputDown('down') and -1 or 0) + (InputDown('up') and 1 or 0),",
+      "matched_text": "InputDown('down')",
+      "mod_name": "Combined Physics Mod for Teardown"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\physall\\main.lua",
+      "line_number": 2324,
+      "key_name": "up",
+      "context": "(InputDown('down') and -1 or 0) + (InputDown('up') and 1 or 0),",
+      "matched_text": "InputDown('up')",
+      "mod_name": "Combined Physics Mod for Teardown"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\physall\\main.lua",
+      "line_number": 3370,
+      "key_name": "shift",
+      "context": "if not InputDown('shift') then",
+      "matched_text": "InputDown('shift')",
+      "mod_name": "Combined Physics Mod for Teardown"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\physall\\main.lua",
+      "line_number": 3740,
+      "key_name": "I",
+      "context": "elseif SettingsKey == \"\" and InputReleased(\"I\") then",
+      "matched_text": "InputReleased(\"I\")",
+      "mod_name": "Combined Physics Mod for Teardown"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\physall\\ref\\Progressive Destruction Mod\\main.lua",
+      "line_number": 488,
+      "key_name": "-",
+      "context": "if InputDown(\"-\") then",
+      "matched_text": "InputDown(\"-\")",
+      "mod_name": "Combined Physics Mod for Teardown"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\physall\\ref\\Progressive Destruction Mod\\main.lua",
+      "line_number": 523,
+      "key_name": ".",
+      "context": "if InputPressed(\".\") and GetBool(\"savegame.mod.progdest.4ce_ENABLE_CON",
+      "matched_text": "InputPressed(\".\")",
+      "mod_name": "Combined Physics Mod for Teardown"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\physall\\ref\\Progressive Destruction Mod\\main.lua",
+      "line_number": 527,
+      "key_name": ",",
+      "context": "if InputPressed(\",\") and GetBool(\"savegame.mod.progdest.4ce_ENABLE_CON",
+      "matched_text": "InputPressed(\",\")",
+      "mod_name": "Combined Physics Mod for Teardown"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\physall\\ref\\Progressive Destruction Mod\\main.lua",
+      "line_number": 531,
+      "key_name": "m",
+      "context": "if InputPressed(\"m\") and GetBool(\"savegame.mod.progdest.4ce_ENABLE_CON",
+      "matched_text": "InputPressed(\"m\")",
+      "mod_name": "Combined Physics Mod for Teardown"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\physall\\ref\\Progressive Destruction Mod\\main.lua",
+      "line_number": 662,
+      "key_name": "-",
+      "context": "if InputDown(\"-\") and broken==true and math.random()<0.6 then",
+      "matched_text": "InputDown(\"-\")",
+      "mod_name": "Combined Physics Mod for Teardown"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\physall\\ref\\Progressive Destruction Mod\\options.lua",
+      "line_number": 339,
+      "key_name": "esc",
+      "context": "if UiTextButton(\"Close\", 80, 40) or InputPressed(\"esc\") then",
+      "matched_text": "InputPressed(\"esc\")",
+      "mod_name": "Combined Physics Mod for Teardown"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\physall\\ref\\Structural Integrity & Collateral Damage System\\main.lua",
+      "line_number": 416,
+      "key_name": "pause",
+      "context": "if (InputPressed(\"pause\") == true) then",
+      "matched_text": "InputPressed(\"pause\")",
+      "mod_name": "Combined Physics Mod for Teardown"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\physall\\ref\\Structural Integrity & Collateral Damage System\\options.lua",
+      "line_number": 420,
+      "key_name": "pause",
+      "context": "if (InputPressed(\"pause\") == true) then",
+      "matched_text": "InputPressed(\"pause\")",
+      "mod_name": "Combined Physics Mod for Teardown"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\physcomod\\main.lua",
+      "line_number": 1050,
+      "key_name": "-",
+      "context": "if InputDown(\"-\") then",
+      "matched_text": "InputDown(\"-\")",
+      "mod_name": "Combined Physics Destruction Mod"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\physcomod\\main.lua",
+      "line_number": 1078,
+      "key_name": ".",
+      "context": "if InputPressed(\".\") and GetBool(\"savegame.mod.combined.force_ENABLE_C",
+      "matched_text": "InputPressed(\".\")",
+      "mod_name": "Combined Physics Destruction Mod"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\physcomod\\main.lua",
+      "line_number": 1081,
+      "key_name": "m",
+      "context": "if InputPressed(\"m\") and GetBool(\"savegame.mod.combined.force_ENABLE_C",
+      "matched_text": "InputPressed(\"m\")",
+      "mod_name": "Combined Physics Destruction Mod"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\physcomod\\options.lua",
+      "line_number": 300,
+      "key_name": "esc",
+      "context": "if UiTextButton(\"Close\", 80, 40) or InputPressed(\"esc\") then",
+      "matched_text": "InputPressed(\"esc\")",
+      "mod_name": "Combined Physics Destruction Mod"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\Registry Editor Copy\\main.lua",
+      "line_number": 47,
+      "key_name": "f11",
+      "context": "_box and not edit_value_text_box:has_focus()) and InputPressed(\"f11\") then",
+      "matched_text": "InputPressed(\"f11\")",
+      "mod_name": "Registry Editor"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\Registry Editor Copy\\main.lua",
+      "line_number": 54,
+      "key_name": "mousewheel",
+      "context": "_target_position = clamp(scroll_target_position - InputValue(\"mousewheel\") * grid_row_height * 3, 0, max_scroll_position)",
+      "matched_text": "InputValue(\"mousewheel\")",
+      "mod_name": "Registry Editor"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\Registry Editor Copy\\main.lua",
+      "line_number": 233,
+      "key_name": "return",
+      "context": "tton(last_max_key_width, grid_row_height) and not InputReleased(\"return\") then",
+      "matched_text": "InputReleased(\"return\")",
+      "mod_name": "Registry Editor"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\Registry Editor Copy\\main.lua",
+      "line_number": 299,
+      "key_name": "return",
+      "context": "on(last_max_value_width, grid_row_height) and not InputReleased(\"return\") then",
+      "matched_text": "InputReleased(\"return\")",
+      "mod_name": "Registry Editor"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\ScriptExecutor\\main.lua",
+      "line_number": 29,
+      "key_name": "return",
+      "context": "if InputPressed(\"return\") then",
+      "matched_text": "InputPressed(\"return\")",
+      "mod_name": "Script Executor"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\ScriptExecutor\\main.lua",
+      "line_number": 49,
+      "key_name": "mousewheel",
+      "context": "config.scrollPosition = (config.scrollPosition + (InputValue(\"mousewheel\") * 10))",
+      "matched_text": "InputValue(\"mousewheel\")",
+      "mod_name": "Script Executor"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\tdsh\\main.lua",
+      "line_number": 132,
+      "key_name": "mousewheel",
+      "context": "scrollVel = scrollVel + -InputValue(\"mousewheel\") * 40",
+      "matched_text": "InputValue(\"mousewheel\")",
+      "mod_name": "Hotkey Viewer"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\tdsh\\main.lua",
+      "line_number": 214,
+      "key_name": "KEY",
+      "context": "-- 1. InputPressed(\"KEY\") or InputDown(\"KEY\")",
+      "matched_text": "InputPressed(\"KEY\")",
+      "mod_name": "Hotkey Viewer"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\tdsh\\main.lua",
+      "line_number": 214,
+      "key_name": "KEY",
+      "context": "-- 1. InputPressed(\"KEY\") or InputDown(\"KEY\")",
+      "matched_text": "InputDown(\"KEY\")",
+      "mod_name": "Hotkey Viewer"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\tdvr\\main.lua",
+      "line_number": 74,
+      "key_name": "right",
+      "context": "local x = InputDown(\"right\") and 1 or InputDown(\"left\") and -1 or 0",
+      "matched_text": "InputDown(\"right\")",
+      "mod_name": "Teardown VR Mod with LÖVR Integration"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\tdvr\\main.lua",
+      "line_number": 74,
+      "key_name": "left",
+      "context": "local x = InputDown(\"right\") and 1 or InputDown(\"left\") and -1 or 0",
+      "matched_text": "InputDown(\"left\")",
+      "mod_name": "Teardown VR Mod with LÖVR Integration"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\tdvr\\main.lua",
+      "line_number": 75,
+      "key_name": "up",
+      "context": "local y = InputDown(\"up\") and 1 or InputDown(\"down\") and -1 or 0",
+      "matched_text": "InputDown(\"up\")",
+      "mod_name": "Teardown VR Mod with LÖVR Integration"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\tdvr\\main.lua",
+      "line_number": 75,
+      "key_name": "down",
+      "context": "local y = InputDown(\"up\") and 1 or InputDown(\"down\") and -1 or 0",
+      "matched_text": "InputDown(\"down\")",
+      "mod_name": "Teardown VR Mod with LÖVR Integration"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\tdvr\\main.lua",
+      "line_number": 167,
+      "key_name": "r",
+      "context": "if InputDown(\"r\") and not vrHotkeyPressed then",
+      "matched_text": "InputDown(\"r\")",
+      "mod_name": "Teardown VR Mod with LÖVR Integration"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\tdvr\\main.lua",
+      "line_number": 184,
+      "key_name": "r",
+      "context": "elseif not InputDown(\"r\") then",
+      "matched_text": "InputDown(\"r\")",
+      "mod_name": "Teardown VR Mod with LÖVR Integration"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\tdvr\\main.lua",
+      "line_number": 232,
+      "key_name": "camerax",
+      "context": "local dx = InputValue(\"camerax\") * turnspeed",
+      "matched_text": "InputValue(\"camerax\")",
+      "mod_name": "Teardown VR Mod with LÖVR Integration"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\tdvr\\main.lua",
+      "line_number": 233,
+      "key_name": "cameray",
+      "context": "local dy = InputValue(\"cameray\") * turnspeed",
+      "matched_text": "InputValue(\"cameray\")",
+      "mod_name": "Teardown VR Mod with LÖVR Integration"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\tdvr\\main.lua",
+      "line_number": 251,
+      "key_name": "up",
+      "context": "local forward = InputDown(\"up\")",
+      "matched_text": "InputDown(\"up\")",
+      "mod_name": "Teardown VR Mod with LÖVR Integration"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\tdvr\\main.lua",
+      "line_number": 252,
+      "key_name": "down",
+      "context": "local backward = InputDown(\"down\")",
+      "matched_text": "InputDown(\"down\")",
+      "mod_name": "Teardown VR Mod with LÖVR Integration"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\tdvr\\main.lua",
+      "line_number": 253,
+      "key_name": "left",
+      "context": "local left = InputDown(\"left\")",
+      "matched_text": "InputDown(\"left\")",
+      "mod_name": "Teardown VR Mod with LÖVR Integration"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\tdvr\\main.lua",
+      "line_number": 254,
+      "key_name": "right",
+      "context": "local right = InputDown(\"right\")",
+      "matched_text": "InputDown(\"right\")",
+      "mod_name": "Teardown VR Mod with LÖVR Integration"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\tdvr\\main.lua",
+      "line_number": 255,
+      "key_name": "jump",
+      "context": "local up = InputDown(\"jump\")",
+      "matched_text": "InputDown(\"jump\")",
+      "mod_name": "Teardown VR Mod with LÖVR Integration"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\tdvr\\main.lua",
+      "line_number": 256,
+      "key_name": "crouch",
+      "context": "local down = InputDown(\"crouch\")",
+      "matched_text": "InputDown(\"crouch\")",
+      "mod_name": "Teardown VR Mod with LÖVR Integration"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\tdvr\\main.lua",
+      "line_number": 257,
+      "key_name": "extra0",
+      "context": "local sprint = InputDown(\"extra0\")",
+      "matched_text": "InputDown(\"extra0\")",
+      "mod_name": "Teardown VR Mod with LÖVR Integration"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\tdWater\\main.lua",
+      "line_number": 243,
+      "key_name": "secondary",
+      "context": "local secondary = CFG.secondaryBoost and InputDown(\"secondary\")",
+      "matched_text": "InputDown(\"secondary\")",
+      "mod_name": "Teardown Water (AI Edition)"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\tdWater\\main.lua",
+      "line_number": 333,
+      "key_name": "usetool",
+      "context": "if InputPressed(\"usetool\") then startEmissionFromRay() end",
+      "matched_text": "InputPressed(\"usetool\")",
+      "mod_name": "Teardown Water (AI Edition)"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\tdWater\\main.lua",
+      "line_number": 334,
+      "key_name": "usetool",
+      "context": "if InputReleased(\"usetool\") then stopEmission() end",
+      "matched_text": "InputReleased(\"usetool\")",
+      "mod_name": "Teardown Water (AI Edition)"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\tdWater\\main.lua",
+      "line_number": 337,
+      "key_name": "usetool",
+      "context": "if GetBool(\"game.player.canusetool\") and InputPressed(\"usetool\") then",
+      "matched_text": "InputPressed(\"usetool\")",
+      "mod_name": "Teardown Water (AI Edition)"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\tdWater\\main.lua",
+      "line_number": 341,
+      "key_name": "reload",
+      "context": "if emit and InputPressed(\"reload\") then startEmissionFromRay() end",
+      "matched_text": "InputPressed(\"reload\")",
+      "mod_name": "Teardown Water (AI Edition)"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\tdWater\\main.lua",
+      "line_number": 390,
+      "key_name": "lmb",
+      "context": "if over and InputPressed(\"lmb\") then raw = math.max(mi, raw - inc); PM_SLIDER_HOL",
+      "matched_text": "InputPressed(\"lmb\")",
+      "mod_name": "Teardown Water (AI Edition)"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\tdWater\\main.lua",
+      "line_number": 391,
+      "key_name": "lmb",
+      "context": "= PM_SLIDER_HOLD[key..\"-minus\"]; if hold then if InputDown(\"lmb\") and over then if now>=hold.next then raw=math.max",
+      "matched_text": "InputDown(\"lmb\")",
+      "mod_name": "Teardown Water (AI Edition)"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\tdWater\\main.lua",
+      "line_number": 397,
+      "key_name": "lmb",
+      "context": "and barMX<=barW and barMY>=0 and barMY<=barH and InputDown(\"lmb\") then local nt = barMX/barW; raw = mi + (ma-mi)*nt",
+      "matched_text": "InputDown(\"lmb\")",
+      "mod_name": "Teardown Water (AI Edition)"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\tdWater\\main.lua",
+      "line_number": 402,
+      "key_name": "lmb",
+      "context": "if over and InputPressed(\"lmb\") then raw = math.min(ma, raw + inc); PM_SLIDER_HOL",
+      "matched_text": "InputPressed(\"lmb\")",
+      "mod_name": "Teardown Water (AI Edition)"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\tdWater\\main.lua",
+      "line_number": 403,
+      "key_name": "lmb",
+      "context": "d = PM_SLIDER_HOLD[key..\"-plus\"]; if hold then if InputDown(\"lmb\") and over then if now>=hold.next then raw=math.min",
+      "matched_text": "InputDown(\"lmb\")",
+      "mod_name": "Teardown Water (AI Edition)"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\tdWater\\options.lua",
+      "line_number": 103,
+      "key_name": "lmb",
+      "context": "if over and InputPressed(\"lmb\") then raw = math.max(mi, raw - inc); SLIDER_HOLD[k",
+      "matched_text": "InputPressed(\"lmb\")",
+      "mod_name": "Teardown Water (AI Edition)"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\tdWater\\options.lua",
+      "line_number": 106,
+      "key_name": "lmb",
+      "context": "if InputDown(\"lmb\") and over then",
+      "matched_text": "InputDown(\"lmb\")",
+      "mod_name": "Teardown Water (AI Edition)"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\tdWater\\options.lua",
+      "line_number": 124,
+      "key_name": "lmb",
+      "context": "and barMX<=barW and barMY>=0 and barMY<=barH and InputDown(\"lmb\") then",
+      "matched_text": "InputDown(\"lmb\")",
+      "mod_name": "Teardown Water (AI Edition)"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\tdWater\\options.lua",
+      "line_number": 138,
+      "key_name": "lmb",
+      "context": "if over and InputPressed(\"lmb\") then raw = math.min(ma, raw + inc); SLIDER_HOLD[k",
+      "matched_text": "InputPressed(\"lmb\")",
+      "mod_name": "Teardown Water (AI Edition)"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\tdWater\\options.lua",
+      "line_number": 141,
+      "key_name": "lmb",
+      "context": "if InputDown(\"lmb\") and over then",
+      "matched_text": "InputDown(\"lmb\")",
+      "mod_name": "Teardown Water (AI Edition)"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\Water simulation Copy\\main.lua",
+      "line_number": 12,
+      "key_name": "F",
+      "context": "if InputDown(\"F\") then",
+      "matched_text": "InputDown(\"F\")",
+      "mod_name": "Water simulation"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\WaterRevamp\\main.lua",
+      "line_number": 128,
+      "key_name": "Y",
+      "context": "if InputPressed(\"Y\") then",
+      "matched_text": "InputPressed(\"Y\")",
+      "mod_name": "WaterRevamp"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\WaterRevamp\\main.lua",
+      "line_number": 131,
+      "key_name": "r",
+      "context": "if InputPressed(\"r\") then",
+      "matched_text": "InputPressed(\"r\")",
+      "mod_name": "WaterRevamp"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\_devconsole\\main.lua",
+      "line_number": 77,
+      "key_name": "J",
+      "context": "if InputPressed(\"J\") then",
+      "matched_text": "InputPressed(\"J\")",
+      "mod_name": "_devconsole"
+    },
+    {
+      "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\_devconsole\\main.lua",
+      "line_number": 82,
+      "key_name": "esc",
+      "context": "if InputPressed(\"esc\") then",
+      "matched_text": "InputPressed(\"esc\")",
+      "mod_name": "_devconsole"
     }
   ],
   "aggregated": {
@@ -17730,6 +19162,14 @@
         "context": "if InputPressed(\"t\") then --- delete all vehicle",
         "matched_text": "InputPressed(\"t\")",
         "mod_name": "Vox Remover (Performance Mod)"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\Bigger Water simulation Copy\\main.lua",
+        "line_number": 12,
+        "key_name": "t",
+        "context": "if InputDown(\"t\") then",
+        "matched_text": "InputDown(\"t\")",
+        "mod_name": "Bigger Water simulation"
       }
     ],
     "lmb": [
@@ -19676,6 +21116,214 @@
         "context": "if not InputDown(\"lmb\") and grabbed[1][1] ~= \"\" then",
         "matched_text": "InputDown(\"lmb\")",
         "mod_name": "Connections API"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\Artzert's Utilities [TDMP] Copy\\main.lua",
+        "line_number": 615,
+        "key_name": "lmb",
+        "context": "if InputPressed(\"lmb\") and (IGM.changingkb == false) then",
+        "matched_text": "InputPressed(\"lmb\")",
+        "mod_name": "Artzert's Utilities [TDMP]"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\Artzert's Utilities [TDMP] Copy\\main.lua",
+        "line_number": 648,
+        "key_name": "lmb",
+        "context": "if InputPressed(\"lmb\") and (IGM.changingkb == false) then",
+        "matched_text": "InputPressed(\"lmb\")",
+        "mod_name": "Artzert's Utilities [TDMP]"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\Artzert's Utilities [TDMP] Copy\\main.lua",
+        "line_number": 2649,
+        "key_name": "lmb",
+        "context": "if InputReleased(\"lmb\") then",
+        "matched_text": "InputReleased(\"lmb\")",
+        "mod_name": "Artzert's Utilities [TDMP]"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\Artzert's Utilities [TDMP] Copy\\main.lua",
+        "line_number": 2671,
+        "key_name": "lmb",
+        "context": "hysgun\" and (not omnitool.disablePhysI)) and (not InputDown(\"lmb\"))) and (global.playervh == 0) then",
+        "matched_text": "InputDown(\"lmb\")",
+        "mod_name": "Artzert's Utilities [TDMP]"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\Artzert's Utilities [TDMP] Copy\\main.lua",
+        "line_number": 3048,
+        "key_name": "lmb",
+        "context": "hysgun\" and (not omnitool.disablePhysI)) and (not InputDown(\"lmb\"))) and (global.playervh == 0) and (not library.kbh",
+        "matched_text": "InputDown(\"lmb\")",
+        "mod_name": "Artzert's Utilities [TDMP]"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\Artzert's Utilities [TDMP] Copy\\options.lua",
+        "line_number": 617,
+        "key_name": "lmb",
+        "context": "if InputPressed(\"lmb\") and (global.changingkb == false) then",
+        "matched_text": "InputPressed(\"lmb\")",
+        "mod_name": "Artzert's Utilities [TDMP]"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\Artzert's Utilities [TDMP] Copy\\options.lua",
+        "line_number": 656,
+        "key_name": "lmb",
+        "context": "if InputPressed(\"lmb\") and (global.changingkb == false) then",
+        "matched_text": "InputPressed(\"lmb\")",
+        "mod_name": "Artzert's Utilities [TDMP]"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\GMod-esque Menu Copy\\main.lua",
+        "line_number": 3836,
+        "key_name": "lmb",
+        "context": "if InputDown(\"lmb\") then",
+        "matched_text": "InputDown(\"lmb\")",
+        "mod_name": "GMod-esque Menu"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\GMod-esque Menu Copy\\main.lua",
+        "line_number": 3939,
+        "key_name": "lmb",
+        "context": "if InputDown(\"lmb\") then",
+        "matched_text": "InputDown(\"lmb\")",
+        "mod_name": "GMod-esque Menu"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\GMod-esque Menu Copy\\main.lua",
+        "line_number": 3984,
+        "key_name": "lmb",
+        "context": "if not toolHover and InputPressed(\"lmb\") then",
+        "matched_text": "InputPressed(\"lmb\")",
+        "mod_name": "GMod-esque Menu"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\GMod-esque Menu Copy\\main.lua",
+        "line_number": 4469,
+        "key_name": "lmb",
+        "context": "local pressing = InputDown(\"lmb\")",
+        "matched_text": "InputDown(\"lmb\")",
+        "mod_name": "GMod-esque Menu"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\GMod-esque Menu Copy\\main.lua",
+        "line_number": 4470,
+        "key_name": "lmb",
+        "context": "local released = InputReleased(\"lmb\")",
+        "matched_text": "InputReleased(\"lmb\")",
+        "mod_name": "GMod-esque Menu"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\GMod-esque Menu Copy\\main.lua",
+        "line_number": 4671,
+        "key_name": "lmb",
+        "context": "if InputDown(\"lmb\") and operations[i..\"_focus\"] then",
+        "matched_text": "InputDown(\"lmb\")",
+        "mod_name": "GMod-esque Menu"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\GMod-esque Menu Copy\\main.lua",
+        "line_number": 5969,
+        "key_name": "lmb",
+        "context": "local pressing = InputDown(\"lmb\")",
+        "matched_text": "InputDown(\"lmb\")",
+        "mod_name": "GMod-esque Menu"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\GMod-esque Menu Copy\\main.lua",
+        "line_number": 5970,
+        "key_name": "lmb",
+        "context": "local released = InputReleased(\"lmb\")",
+        "matched_text": "InputReleased(\"lmb\")",
+        "mod_name": "GMod-esque Menu"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\ingame_regedit\\main.lua",
+        "line_number": 69,
+        "key_name": "lmb",
+        "context": "if InputPressed(\"lmb\") then",
+        "matched_text": "InputPressed(\"lmb\")",
+        "mod_name": "MMRV: In-Game Registry Editor"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\tdWater\\main.lua",
+        "line_number": 390,
+        "key_name": "lmb",
+        "context": "if over and InputPressed(\"lmb\") then raw = math.max(mi, raw - inc); PM_SLIDER_HOL",
+        "matched_text": "InputPressed(\"lmb\")",
+        "mod_name": "Teardown Water (AI Edition)"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\tdWater\\main.lua",
+        "line_number": 391,
+        "key_name": "lmb",
+        "context": "= PM_SLIDER_HOLD[key..\"-minus\"]; if hold then if InputDown(\"lmb\") and over then if now>=hold.next then raw=math.max",
+        "matched_text": "InputDown(\"lmb\")",
+        "mod_name": "Teardown Water (AI Edition)"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\tdWater\\main.lua",
+        "line_number": 397,
+        "key_name": "lmb",
+        "context": "and barMX<=barW and barMY>=0 and barMY<=barH and InputDown(\"lmb\") then local nt = barMX/barW; raw = mi + (ma-mi)*nt",
+        "matched_text": "InputDown(\"lmb\")",
+        "mod_name": "Teardown Water (AI Edition)"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\tdWater\\main.lua",
+        "line_number": 402,
+        "key_name": "lmb",
+        "context": "if over and InputPressed(\"lmb\") then raw = math.min(ma, raw + inc); PM_SLIDER_HOL",
+        "matched_text": "InputPressed(\"lmb\")",
+        "mod_name": "Teardown Water (AI Edition)"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\tdWater\\main.lua",
+        "line_number": 403,
+        "key_name": "lmb",
+        "context": "d = PM_SLIDER_HOLD[key..\"-plus\"]; if hold then if InputDown(\"lmb\") and over then if now>=hold.next then raw=math.min",
+        "matched_text": "InputDown(\"lmb\")",
+        "mod_name": "Teardown Water (AI Edition)"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\tdWater\\options.lua",
+        "line_number": 103,
+        "key_name": "lmb",
+        "context": "if over and InputPressed(\"lmb\") then raw = math.max(mi, raw - inc); SLIDER_HOLD[k",
+        "matched_text": "InputPressed(\"lmb\")",
+        "mod_name": "Teardown Water (AI Edition)"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\tdWater\\options.lua",
+        "line_number": 106,
+        "key_name": "lmb",
+        "context": "if InputDown(\"lmb\") and over then",
+        "matched_text": "InputDown(\"lmb\")",
+        "mod_name": "Teardown Water (AI Edition)"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\tdWater\\options.lua",
+        "line_number": 124,
+        "key_name": "lmb",
+        "context": "and barMX<=barW and barMY>=0 and barMY<=barH and InputDown(\"lmb\") then",
+        "matched_text": "InputDown(\"lmb\")",
+        "mod_name": "Teardown Water (AI Edition)"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\tdWater\\options.lua",
+        "line_number": 138,
+        "key_name": "lmb",
+        "context": "if over and InputPressed(\"lmb\") then raw = math.min(ma, raw + inc); SLIDER_HOLD[k",
+        "matched_text": "InputPressed(\"lmb\")",
+        "mod_name": "Teardown Water (AI Edition)"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\tdWater\\options.lua",
+        "line_number": 141,
+        "key_name": "lmb",
+        "context": "if InputDown(\"lmb\") and over then",
+        "matched_text": "InputDown(\"lmb\")",
+        "mod_name": "Teardown Water (AI Edition)"
       }
     ],
     "cameray": [
@@ -19918,6 +21566,30 @@
         "context": "local rDelta = Vec(InputValue(\"cameray\"),InputValue(\"camerax\"))",
         "matched_text": "InputValue(\"cameray\")",
         "mod_name": "HEMERA 08 Shotgun"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\GMod-esque Menu Copy\\main.lua",
+        "line_number": 216,
+        "key_name": "cameray",
+        "context": "local realY = InputValue(\"cameray\") * 2.5",
+        "matched_text": "InputValue(\"cameray\")",
+        "mod_name": "GMod-esque Menu"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\GMod-esque Menu Copy\\main.lua",
+        "line_number": 242,
+        "key_name": "cameray",
+        "context": "local realY = InputValue(\"cameray\") * 2.5",
+        "matched_text": "InputValue(\"cameray\")",
+        "mod_name": "GMod-esque Menu"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\tdvr\\main.lua",
+        "line_number": 233,
+        "key_name": "cameray",
+        "context": "local dy = InputValue(\"cameray\") * turnspeed",
+        "matched_text": "InputValue(\"cameray\")",
+        "mod_name": "Teardown VR Mod with LÖVR Integration"
       }
     ],
     "camerax": [
@@ -20160,6 +21832,30 @@
         "context": "local rDelta = Vec(InputValue(\"cameray\"),InputValue(\"camerax\"))",
         "matched_text": "InputValue(\"camerax\")",
         "mod_name": "HEMERA 08 Shotgun"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\GMod-esque Menu Copy\\main.lua",
+        "line_number": 215,
+        "key_name": "camerax",
+        "context": "local realX = InputValue(\"camerax\")",
+        "matched_text": "InputValue(\"camerax\")",
+        "mod_name": "GMod-esque Menu"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\GMod-esque Menu Copy\\main.lua",
+        "line_number": 241,
+        "key_name": "camerax",
+        "context": "local realX = InputValue(\"camerax\")",
+        "matched_text": "InputValue(\"camerax\")",
+        "mod_name": "GMod-esque Menu"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\tdvr\\main.lua",
+        "line_number": 232,
+        "key_name": "camerax",
+        "context": "local dx = InputValue(\"camerax\") * turnspeed",
+        "matched_text": "InputValue(\"camerax\")",
+        "mod_name": "Teardown VR Mod with LÖVR Integration"
       }
     ],
     "shift": [
@@ -20890,6 +22586,46 @@
         "context": "= SEL((selectfireTimer > 0 or selectfire == 0 or InputDown(\"shift\")) and not reloading, x3, y3, z3, rotx3, roty3, rot",
         "matched_text": "InputDown(\"shift\")",
         "mod_name": "Connections API"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\GMod-esque Menu Copy\\main.lua",
+        "line_number": 202,
+        "key_name": "shift",
+        "context": "if InputDown(\"shift\") and index then",
+        "matched_text": "InputDown(\"shift\")",
+        "mod_name": "GMod-esque Menu"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\GMod-esque Menu Copy\\main.lua",
+        "line_number": 222,
+        "key_name": "shift",
+        "context": "if InputDown(\"shift\") then",
+        "matched_text": "InputDown(\"shift\")",
+        "mod_name": "GMod-esque Menu"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\GMod-esque Menu Copy\\main.lua",
+        "line_number": 248,
+        "key_name": "shift",
+        "context": "if InputDown(\"shift\") then",
+        "matched_text": "InputDown(\"shift\")",
+        "mod_name": "GMod-esque Menu"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\ingame_regedit\\main.lua",
+        "line_number": 86,
+        "key_name": "shift",
+        "context": "reg.scroll = math.min(0, reg.scroll + wheel*(InputDown(\"shift\") and 4 or 1))",
+        "matched_text": "InputDown(\"shift\")",
+        "mod_name": "MMRV: In-Game Registry Editor"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\physall\\main.lua",
+        "line_number": 3370,
+        "key_name": "shift",
+        "context": "if not InputDown('shift') then",
+        "matched_text": "InputDown('shift')",
+        "mod_name": "Combined Physics Mod for Teardown"
       }
     ],
     "esc": [
@@ -21436,6 +23172,62 @@
         "context": "if InputPressed(\"esc\") and is_open and not changing_key then",
         "matched_text": "InputPressed(\"esc\")",
         "mod_name": "Weather editor"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\Artzert's Utilities [TDMP] Copy\\main.lua",
+        "line_number": 2050,
+        "key_name": "esc",
+        "context": "Button(\"Artzert's Utils\", false) or (IGM.open and InputPressed(\"esc\")) then",
+        "matched_text": "InputPressed(\"esc\")",
+        "mod_name": "Artzert's Utilities [TDMP]"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\devconsole\\main.lua",
+        "line_number": 122,
+        "key_name": "esc",
+        "context": "if InputPressed(\"esc\") then",
+        "matched_text": "InputPressed(\"esc\")",
+        "mod_name": "devconsole"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\multiphysics\\ref\\prgd\\options.lua",
+        "line_number": 339,
+        "key_name": "esc",
+        "context": "if UiTextButton(\"Close\", 80, 40) or InputPressed(\"esc\") then",
+        "matched_text": "InputPressed(\"esc\")",
+        "mod_name": "Multiphysics (PRGD + IBSIT + MBCS)"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\pcomb\\ref\\prgd\\options.lua",
+        "line_number": 339,
+        "key_name": "esc",
+        "context": "if UiTextButton(\"Close\", 80, 40) or InputPressed(\"esc\") then",
+        "matched_text": "InputPressed(\"esc\")",
+        "mod_name": "Physics Combination Mod"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\physall\\ref\\Progressive Destruction Mod\\options.lua",
+        "line_number": 339,
+        "key_name": "esc",
+        "context": "if UiTextButton(\"Close\", 80, 40) or InputPressed(\"esc\") then",
+        "matched_text": "InputPressed(\"esc\")",
+        "mod_name": "Combined Physics Mod for Teardown"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\physcomod\\options.lua",
+        "line_number": 300,
+        "key_name": "esc",
+        "context": "if UiTextButton(\"Close\", 80, 40) or InputPressed(\"esc\") then",
+        "matched_text": "InputPressed(\"esc\")",
+        "mod_name": "Combined Physics Destruction Mod"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\_devconsole\\main.lua",
+        "line_number": 82,
+        "key_name": "esc",
+        "context": "if InputPressed(\"esc\") then",
+        "matched_text": "InputPressed(\"esc\")",
+        "mod_name": "_devconsole"
       }
     ],
     "mousedx": [
@@ -21598,6 +23390,14 @@
         "context": "optionsx = optionsx + InputValue(\"mousedx\")/400",
         "matched_text": "InputValue(\"mousedx\")",
         "mod_name": "Connections API"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\Artzert's Utilities [TDMP] Copy\\main.lua",
+        "line_number": 290,
+        "key_name": "mousedx",
+        "context": "local dx, dy = InputValue(\"mousedx\"), InputValue(\"mousedy\")",
+        "matched_text": "InputValue(\"mousedx\")",
+        "mod_name": "Artzert's Utilities [TDMP]"
       }
     ],
     "mousedy": [
@@ -21752,6 +23552,14 @@
         "context": "optionsroty = optionsroty + InputValue(\"mousedy\")/20",
         "matched_text": "InputValue(\"mousedy\")",
         "mod_name": "Connections API"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\Artzert's Utilities [TDMP] Copy\\main.lua",
+        "line_number": 290,
+        "key_name": "mousedy",
+        "context": "local dx, dy = InputValue(\"mousedx\"), InputValue(\"mousedy\")",
+        "matched_text": "InputValue(\"mousedy\")",
+        "mod_name": "Artzert's Utilities [TDMP]"
       }
     ],
     "mousewheel": [
@@ -22298,6 +24106,78 @@
         "context": "elseif InputValue(\"mousewheel\") < 0 and optionszoom > -2 then",
         "matched_text": "InputValue(\"mousewheel\")",
         "mod_name": "Connections API"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\Artzert's Utilities [TDMP] Copy\\main.lua",
+        "line_number": 864,
+        "key_name": "mousewheel",
+        "context": "IGM.scroll = IGM.scroll - InputValue(\"mousewheel\")*30",
+        "matched_text": "InputValue(\"mousewheel\")",
+        "mod_name": "Artzert's Utilities [TDMP]"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\Artzert's Utilities [TDMP] Copy\\options.lua",
+        "line_number": 825,
+        "key_name": "mousewheel",
+        "context": "global.scroll = global.scroll - InputValue(\"mousewheel\")*30",
+        "matched_text": "InputValue(\"mousewheel\")",
+        "mod_name": "Artzert's Utilities [TDMP]"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\devcon\\main.lua",
+        "line_number": 206,
+        "key_name": "mousewheel",
+        "context": "local wheel = InputValue and InputValue(\"mousewheel\") or 0",
+        "matched_text": "InputValue(\"mousewheel\")",
+        "mod_name": "Lua Console Overlay Mod"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\GMod-esque Menu Copy\\main.lua",
+        "line_number": 95,
+        "key_name": "mousewheel",
+        "context": ", math.min(8.0 + shi.spawnRadius, shi.spawnDist + InputValue(\"mousewheel\")))",
+        "matched_text": "InputValue(\"mousewheel\")",
+        "mod_name": "GMod-esque Menu"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\GMod-esque Menu Copy\\main.lua",
+        "line_number": 1746,
+        "key_name": "mousewheel",
+        "context": "local scroll = InputValue(\"mousewheel\") * scroll_sensitivity",
+        "matched_text": "InputValue(\"mousewheel\")",
+        "mod_name": "GMod-esque Menu"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\ingame_regedit\\main.lua",
+        "line_number": 84,
+        "key_name": "mousewheel",
+        "context": "local wheel = InputValue(\"mousewheel\")",
+        "matched_text": "InputValue(\"mousewheel\")",
+        "mod_name": "MMRV: In-Game Registry Editor"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\Registry Editor Copy\\main.lua",
+        "line_number": 54,
+        "key_name": "mousewheel",
+        "context": "_target_position = clamp(scroll_target_position - InputValue(\"mousewheel\") * grid_row_height * 3, 0, max_scroll_position)",
+        "matched_text": "InputValue(\"mousewheel\")",
+        "mod_name": "Registry Editor"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\ScriptExecutor\\main.lua",
+        "line_number": 49,
+        "key_name": "mousewheel",
+        "context": "config.scrollPosition = (config.scrollPosition + (InputValue(\"mousewheel\") * 10))",
+        "matched_text": "InputValue(\"mousewheel\")",
+        "mod_name": "Script Executor"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\tdsh\\main.lua",
+        "line_number": 132,
+        "key_name": "mousewheel",
+        "context": "scrollVel = scrollVel + -InputValue(\"mousewheel\") * 40",
+        "matched_text": "InputValue(\"mousewheel\")",
+        "mod_name": "Hotkey Viewer"
       }
     ],
     "interact": [
@@ -27838,6 +29718,38 @@
         "context": "if InputDown(\"rmb\") and grabbed[1][1] == \"\" then",
         "matched_text": "InputDown(\"rmb\")",
         "mod_name": "Connections API"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\GMod-esque Menu Copy\\main.lua",
+        "line_number": 4720,
+        "key_name": "rmb",
+        "context": "if not InputDown(\"rmb\") then",
+        "matched_text": "InputDown(\"rmb\")",
+        "mod_name": "GMod-esque Menu"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\GMod-esque Menu Copy\\main.lua",
+        "line_number": 4832,
+        "key_name": "rmb",
+        "context": "UiIsMouseInRect(grid_size + 2, grid_size + 2) and InputPressed(\"rmb\") then",
+        "matched_text": "InputPressed(\"rmb\")",
+        "mod_name": "GMod-esque Menu"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\GMod-esque Menu Copy\\main.lua",
+        "line_number": 5987,
+        "key_name": "rmb",
+        "context": "if InputPressed(\"rmb\") then",
+        "matched_text": "InputPressed(\"rmb\")",
+        "mod_name": "GMod-esque Menu"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\GMod-esque Menu Copy\\main.lua",
+        "line_number": 6373,
+        "key_name": "rmb",
+        "context": "local rmbPressed = InputPressed and InputPressed(\"rmb\") or false",
+        "matched_text": "InputPressed(\"rmb\")",
+        "mod_name": "GMod-esque Menu"
       }
     ],
     "any": [
@@ -28962,6 +30874,126 @@
         "context": "if InputPressed(\"usetool\") and not circleUIActive and howitzerState and not",
         "matched_text": "InputPressed(\"usetool\")",
         "mod_name": "Artillery Barrage RELOADED"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\3067970452\\main.lua",
+        "line_number": 500,
+        "key_name": "usetool",
+        "context": "if InputPressed(\"usetool\") then",
+        "matched_text": "InputPressed(\"usetool\")",
+        "mod_name": "Smoke Gun With Even More Extra Options"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\3067970452\\main.lua",
+        "line_number": 521,
+        "key_name": "usetool",
+        "context": "if InputReleased(\"usetool\") and mode == \"Continuous\" then",
+        "matched_text": "InputReleased(\"usetool\")",
+        "mod_name": "Smoke Gun With Even More Extra Options"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\devcon\\main.lua",
+        "line_number": 270,
+        "key_name": "usetool",
+        "context": "if InputPressed and InputPressed(\"usetool\") then",
+        "matched_text": "InputPressed(\"usetool\")",
+        "mod_name": "Lua Console Overlay Mod"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\devcon\\main.lua",
+        "line_number": 295,
+        "key_name": "usetool",
+        "context": "if InputPressed and InputPressed(\"usetool\") then",
+        "matched_text": "InputPressed(\"usetool\")",
+        "mod_name": "Lua Console Overlay Mod"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\devcon\\lasertool\\main.lua",
+        "line_number": 44,
+        "key_name": "usetool",
+        "context": "if InputPressed(\"usetool\") then",
+        "matched_text": "InputPressed(\"usetool\")",
+        "mod_name": "Lua Console Overlay Mod"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\GMod-esque Menu Copy\\main.lua",
+        "line_number": 169,
+        "key_name": "usetool",
+        "context": "if InputPressed(\"usetool\") then",
+        "matched_text": "InputPressed(\"usetool\")",
+        "mod_name": "GMod-esque Menu"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\GMod-esque Menu Copy\\main.lua",
+        "line_number": 2464,
+        "key_name": "usetool",
+        "context": "if InputPressed(\"usetool\") then",
+        "matched_text": "InputPressed(\"usetool\")",
+        "mod_name": "GMod-esque Menu"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\GMod-esque Menu Copy\\main.lua",
+        "line_number": 4926,
+        "key_name": "usetool",
+        "context": "if UiIsMouseInRect(length + 20, 40) and InputDown(\"usetool\") then",
+        "matched_text": "InputDown(\"usetool\")",
+        "mod_name": "GMod-esque Menu"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\GMod-esque Menu Copy\\main.lua",
+        "line_number": 6371,
+        "key_name": "usetool",
+        "context": "local pressing = InputDown(\"usetool\")",
+        "matched_text": "InputDown(\"usetool\")",
+        "mod_name": "GMod-esque Menu"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\GMod-esque Menu Copy\\main.lua",
+        "line_number": 6372,
+        "key_name": "usetool",
+        "context": "local released = InputReleased(\"usetool\")",
+        "matched_text": "InputReleased(\"usetool\")",
+        "mod_name": "GMod-esque Menu"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\GMod-esque Menu Copy\\main.lua",
+        "line_number": 6377,
+        "key_name": "usetool",
+        "context": "local pressing = InputDown(\"usetool\")",
+        "matched_text": "InputDown(\"usetool\")",
+        "mod_name": "GMod-esque Menu"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\GMod-esque Menu Copy\\main.lua",
+        "line_number": 6378,
+        "key_name": "usetool",
+        "context": "local released = InputReleased(\"usetool\")",
+        "matched_text": "InputReleased(\"usetool\")",
+        "mod_name": "GMod-esque Menu"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\tdWater\\main.lua",
+        "line_number": 333,
+        "key_name": "usetool",
+        "context": "if InputPressed(\"usetool\") then startEmissionFromRay() end",
+        "matched_text": "InputPressed(\"usetool\")",
+        "mod_name": "Teardown Water (AI Edition)"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\tdWater\\main.lua",
+        "line_number": 334,
+        "key_name": "usetool",
+        "context": "if InputReleased(\"usetool\") then stopEmission() end",
+        "matched_text": "InputReleased(\"usetool\")",
+        "mod_name": "Teardown Water (AI Edition)"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\tdWater\\main.lua",
+        "line_number": 337,
+        "key_name": "usetool",
+        "context": "if GetBool(\"game.player.canusetool\") and InputPressed(\"usetool\") then",
+        "matched_text": "InputPressed(\"usetool\")",
+        "mod_name": "Teardown Water (AI Edition)"
       }
     ],
     "R": [
@@ -29222,6 +31254,38 @@
         "context": "s = InputValue(\"mousedx\"), InputValue(\"mousedy\"), InputDown(\"space\")",
         "matched_text": "InputDown(\"space\")",
         "mod_name": "(mini) Plane Gun AA 767 with black boxes and spawnable"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\Artzert's Utilities [TDMP] Copy\\main.lua",
+        "line_number": 280,
+        "key_name": "space",
+        "context": "if (InputDown(\"space\")) then",
+        "matched_text": "InputDown(\"space\")",
+        "mod_name": "Artzert's Utilities [TDMP]"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\Artzert's Utilities [TDMP] Copy\\main.lua",
+        "line_number": 358,
+        "key_name": "space",
+        "context": "if (InputDown(\"space\")) then",
+        "matched_text": "InputDown(\"space\")",
+        "mod_name": "Artzert's Utilities [TDMP]"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\Artzert's Utilities [TDMP] Copy\\main.lua",
+        "line_number": 1701,
+        "key_name": "space",
+        "context": "or fly.cog) and (InputDown(fly.DownKey)) and (not InputDown(\"space\")) and (fly.state == \"flying\") then",
+        "matched_text": "InputDown(\"space\")",
+        "mod_name": "Artzert's Utilities [TDMP]"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\devcon\\main.lua",
+        "line_number": 3764,
+        "key_name": "space",
+        "context": "pressed = InputPressed and InputPressed(\"space\")",
+        "matched_text": "InputPressed(\"space\")",
+        "mod_name": "Lua Console Overlay Mod"
       }
     ],
     "ctrl": [
@@ -29648,6 +31712,38 @@
         "context": "local bipodded = (InputDown(\"ctrl\") or dist < 0.4) and selectfire > 0 and VecLength(G",
         "matched_text": "InputDown(\"ctrl\")",
         "mod_name": "Connections API"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\GMod-esque Menu Copy\\main.lua",
+        "line_number": 111,
+        "key_name": "ctrl",
+        "context": "shi.spStatic = InputDown(\"ctrl\")",
+        "matched_text": "InputDown(\"ctrl\")",
+        "mod_name": "GMod-esque Menu"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\GMod-esque Menu Copy\\main.lua",
+        "line_number": 224,
+        "key_name": "ctrl",
+        "context": "elseif InputDown(\"ctrl\") then",
+        "matched_text": "InputDown(\"ctrl\")",
+        "mod_name": "GMod-esque Menu"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\GMod-esque Menu Copy\\main.lua",
+        "line_number": 250,
+        "key_name": "ctrl",
+        "context": "elseif InputDown(\"ctrl\") then",
+        "matched_text": "InputDown(\"ctrl\")",
+        "mod_name": "GMod-esque Menu"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\pcomb\\main.lua",
+        "line_number": 3512,
+        "key_name": "ctrl",
+        "context": "if InputPressed(\"i\") and InputDown(\"ctrl\") then  -- Ctrl+P to open/close menu",
+        "matched_text": "InputDown(\"ctrl\")",
+        "mod_name": "Physics Combination Mod"
       }
     ],
     "s": [
@@ -29980,6 +32076,46 @@
         "context": "if InputPressed(\"r\") then --- delete all debri",
         "matched_text": "InputPressed(\"r\")",
         "mod_name": "Vox Remover (Performance Mod)"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\3067970452\\main.lua",
+        "line_number": 528,
+        "key_name": "r",
+        "context": "if toolSelected and InputPressed(\"r\") then",
+        "matched_text": "InputPressed(\"r\")",
+        "mod_name": "Smoke Gun With Even More Extra Options"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\GMod-esque Menu Copy\\main.lua",
+        "line_number": 2479,
+        "key_name": "r",
+        "context": "elseif InputPressed(\"r\") then",
+        "matched_text": "InputPressed(\"r\")",
+        "mod_name": "GMod-esque Menu"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\tdvr\\main.lua",
+        "line_number": 167,
+        "key_name": "r",
+        "context": "if InputDown(\"r\") and not vrHotkeyPressed then",
+        "matched_text": "InputDown(\"r\")",
+        "mod_name": "Teardown VR Mod with LÖVR Integration"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\tdvr\\main.lua",
+        "line_number": 184,
+        "key_name": "r",
+        "context": "elseif not InputDown(\"r\") then",
+        "matched_text": "InputDown(\"r\")",
+        "mod_name": "Teardown VR Mod with LÖVR Integration"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\WaterRevamp\\main.lua",
+        "line_number": 131,
+        "key_name": "r",
+        "context": "if InputPressed(\"r\") then",
+        "matched_text": "InputPressed(\"r\")",
+        "mod_name": "WaterRevamp"
       }
     ],
     ",": [
@@ -30014,6 +32150,30 @@
         "context": "if InputPressed(\",\") then",
         "matched_text": "InputPressed(\",\")",
         "mod_name": "[Military Invasion] Al Nakheel Ragdolls"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\multiphysics\\ref\\prgd\\main.lua",
+        "line_number": 527,
+        "key_name": ",",
+        "context": "if InputPressed(\",\") and GetBool(\"savegame.mod.progdest.4ce_ENABLE_CON",
+        "matched_text": "InputPressed(\",\")",
+        "mod_name": "Multiphysics (PRGD + IBSIT + MBCS)"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\pcomb\\ref\\prgd\\main.lua",
+        "line_number": 527,
+        "key_name": ",",
+        "context": "if InputPressed(\",\") and GetBool(\"savegame.mod.progdest.4ce_ENABLE_CON",
+        "matched_text": "InputPressed(\",\")",
+        "mod_name": "Physics Combination Mod"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\physall\\ref\\Progressive Destruction Mod\\main.lua",
+        "line_number": 527,
+        "key_name": ",",
+        "context": "if InputPressed(\",\") and GetBool(\"savegame.mod.progdest.4ce_ENABLE_CON",
+        "matched_text": "InputPressed(\",\")",
+        "mod_name": "Combined Physics Mod for Teardown"
       }
     ],
     ".": [
@@ -30072,6 +32232,38 @@
         "context": "elseif InputPressed(\".\") then",
         "matched_text": "InputPressed(\".\")",
         "mod_name": "[Military Invasion] Al Nakheel Ragdolls"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\multiphysics\\ref\\prgd\\main.lua",
+        "line_number": 523,
+        "key_name": ".",
+        "context": "if InputPressed(\".\") and GetBool(\"savegame.mod.progdest.4ce_ENABLE_CON",
+        "matched_text": "InputPressed(\".\")",
+        "mod_name": "Multiphysics (PRGD + IBSIT + MBCS)"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\pcomb\\ref\\prgd\\main.lua",
+        "line_number": 523,
+        "key_name": ".",
+        "context": "if InputPressed(\".\") and GetBool(\"savegame.mod.progdest.4ce_ENABLE_CON",
+        "matched_text": "InputPressed(\".\")",
+        "mod_name": "Physics Combination Mod"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\physall\\ref\\Progressive Destruction Mod\\main.lua",
+        "line_number": 523,
+        "key_name": ".",
+        "context": "if InputPressed(\".\") and GetBool(\"savegame.mod.progdest.4ce_ENABLE_CON",
+        "matched_text": "InputPressed(\".\")",
+        "mod_name": "Combined Physics Mod for Teardown"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\physcomod\\main.lua",
+        "line_number": 1078,
+        "key_name": ".",
+        "context": "if InputPressed(\".\") and GetBool(\"savegame.mod.combined.force_ENABLE_C",
+        "matched_text": "InputPressed(\".\")",
+        "mod_name": "Combined Physics Destruction Mod"
       }
     ],
     "-": [
@@ -30114,6 +32306,62 @@
         "context": "elseif InputPressed(\"-\") then",
         "matched_text": "InputPressed(\"-\")",
         "mod_name": "[Military Invasion] Al Nakheel Ragdolls"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\multiphysics\\ref\\prgd\\main.lua",
+        "line_number": 488,
+        "key_name": "-",
+        "context": "if InputDown(\"-\") then",
+        "matched_text": "InputDown(\"-\")",
+        "mod_name": "Multiphysics (PRGD + IBSIT + MBCS)"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\multiphysics\\ref\\prgd\\main.lua",
+        "line_number": 662,
+        "key_name": "-",
+        "context": "if InputDown(\"-\") and broken==true and math.random()<0.6 then",
+        "matched_text": "InputDown(\"-\")",
+        "mod_name": "Multiphysics (PRGD + IBSIT + MBCS)"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\pcomb\\ref\\prgd\\main.lua",
+        "line_number": 488,
+        "key_name": "-",
+        "context": "if InputDown(\"-\") then",
+        "matched_text": "InputDown(\"-\")",
+        "mod_name": "Physics Combination Mod"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\pcomb\\ref\\prgd\\main.lua",
+        "line_number": 662,
+        "key_name": "-",
+        "context": "if InputDown(\"-\") and broken==true and math.random()<0.6 then",
+        "matched_text": "InputDown(\"-\")",
+        "mod_name": "Physics Combination Mod"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\physall\\ref\\Progressive Destruction Mod\\main.lua",
+        "line_number": 488,
+        "key_name": "-",
+        "context": "if InputDown(\"-\") then",
+        "matched_text": "InputDown(\"-\")",
+        "mod_name": "Combined Physics Mod for Teardown"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\physall\\ref\\Progressive Destruction Mod\\main.lua",
+        "line_number": 662,
+        "key_name": "-",
+        "context": "if InputDown(\"-\") and broken==true and math.random()<0.6 then",
+        "matched_text": "InputDown(\"-\")",
+        "mod_name": "Combined Physics Mod for Teardown"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\physcomod\\main.lua",
+        "line_number": 1050,
+        "key_name": "-",
+        "context": "if InputDown(\"-\") then",
+        "matched_text": "InputDown(\"-\")",
+        "mod_name": "Combined Physics Destruction Mod"
       }
     ],
     "+": [
@@ -30736,6 +32984,62 @@
         "context": "elseif InputDown(\"up\") then",
         "matched_text": "InputDown(\"up\")",
         "mod_name": "Manual Transmission"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\Artzert's Utilities [TDMP] Copy\\main.lua",
+        "line_number": 268,
+        "key_name": "up",
+        "context": "if (InputDown(\"up\")) then",
+        "matched_text": "InputDown(\"up\")",
+        "mod_name": "Artzert's Utilities [TDMP]"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\Artzert's Utilities [TDMP] Copy\\main.lua",
+        "line_number": 342,
+        "key_name": "up",
+        "context": "if (InputDown(\"up\")) then",
+        "matched_text": "InputDown(\"up\")",
+        "mod_name": "Artzert's Utilities [TDMP]"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\GMod-esque Menu Copy\\main.lua",
+        "line_number": 2056,
+        "key_name": "up",
+        "context": "ws = InputDown(\"up\") and -operations[\"walking_speed\"] * (1 + dt) or 0",
+        "matched_text": "InputDown(\"up\")",
+        "mod_name": "GMod-esque Menu"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\GMod-esque Menu Copy\\main.lua",
+        "line_number": 2060,
+        "key_name": "up",
+        "context": "--if InputDown(\"up\") then ws = -operations[\"walking_speed\"] * multi el",
+        "matched_text": "InputDown(\"up\")",
+        "mod_name": "GMod-esque Menu"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\physall\\main.lua",
+        "line_number": 2324,
+        "key_name": "up",
+        "context": "(InputDown('down') and -1 or 0) + (InputDown('up') and 1 or 0),",
+        "matched_text": "InputDown('up')",
+        "mod_name": "Combined Physics Mod for Teardown"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\tdvr\\main.lua",
+        "line_number": 75,
+        "key_name": "up",
+        "context": "local y = InputDown(\"up\") and 1 or InputDown(\"down\") and -1 or 0",
+        "matched_text": "InputDown(\"up\")",
+        "mod_name": "Teardown VR Mod with LÖVR Integration"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\tdvr\\main.lua",
+        "line_number": 251,
+        "key_name": "up",
+        "context": "local forward = InputDown(\"up\")",
+        "matched_text": "InputDown(\"up\")",
+        "mod_name": "Teardown VR Mod with LÖVR Integration"
       }
     ],
     "down": [
@@ -30954,6 +33258,62 @@
         "context": "elseif InputDown(\"down\") then",
         "matched_text": "InputDown(\"down\")",
         "mod_name": "Manual Transmission"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\Artzert's Utilities [TDMP] Copy\\main.lua",
+        "line_number": 271,
+        "key_name": "down",
+        "context": "if (InputDown(\"down\")) then",
+        "matched_text": "InputDown(\"down\")",
+        "mod_name": "Artzert's Utilities [TDMP]"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\Artzert's Utilities [TDMP] Copy\\main.lua",
+        "line_number": 350,
+        "key_name": "down",
+        "context": "if (InputDown(\"down\")) then",
+        "matched_text": "InputDown(\"down\")",
+        "mod_name": "Artzert's Utilities [TDMP]"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\GMod-esque Menu Copy\\main.lua",
+        "line_number": 2057,
+        "key_name": "down",
+        "context": "ss = InputDown(\"down\") and operations[\"walking_speed\"] * (1 + dt) or 0",
+        "matched_text": "InputDown(\"down\")",
+        "mod_name": "GMod-esque Menu"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\GMod-esque Menu Copy\\main.lua",
+        "line_number": 2061,
+        "key_name": "down",
+        "context": "--if InputDown(\"down\") then ss = operations[\"walking_speed\"] * multi els",
+        "matched_text": "InputDown(\"down\")",
+        "mod_name": "GMod-esque Menu"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\physall\\main.lua",
+        "line_number": 2324,
+        "key_name": "down",
+        "context": "(InputDown('down') and -1 or 0) + (InputDown('up') and 1 or 0),",
+        "matched_text": "InputDown('down')",
+        "mod_name": "Combined Physics Mod for Teardown"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\tdvr\\main.lua",
+        "line_number": 75,
+        "key_name": "down",
+        "context": "local y = InputDown(\"up\") and 1 or InputDown(\"down\") and -1 or 0",
+        "matched_text": "InputDown(\"down\")",
+        "mod_name": "Teardown VR Mod with LÖVR Integration"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\tdvr\\main.lua",
+        "line_number": 252,
+        "key_name": "down",
+        "context": "local backward = InputDown(\"down\")",
+        "matched_text": "InputDown(\"down\")",
+        "mod_name": "Teardown VR Mod with LÖVR Integration"
       }
     ],
     "left": [
@@ -31084,6 +33444,62 @@
         "context": "elseif InputDown(\"left\") then",
         "matched_text": "InputDown(\"left\")",
         "mod_name": "Manual Transmission"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\Artzert's Utilities [TDMP] Copy\\main.lua",
+        "line_number": 274,
+        "key_name": "left",
+        "context": "if (InputDown(\"left\")) then",
+        "matched_text": "InputDown(\"left\")",
+        "mod_name": "Artzert's Utilities [TDMP]"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\Artzert's Utilities [TDMP] Copy\\main.lua",
+        "line_number": 346,
+        "key_name": "left",
+        "context": "if (InputDown(\"left\")) then",
+        "matched_text": "InputDown(\"left\")",
+        "mod_name": "Artzert's Utilities [TDMP]"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\GMod-esque Menu Copy\\main.lua",
+        "line_number": 2058,
+        "key_name": "left",
+        "context": "as = InputDown(\"left\") and -operations[\"walking_speed\"] * (1 + dt) or 0",
+        "matched_text": "InputDown(\"left\")",
+        "mod_name": "GMod-esque Menu"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\GMod-esque Menu Copy\\main.lua",
+        "line_number": 2062,
+        "key_name": "left",
+        "context": "--if InputDown(\"left\") then as = -operations[\"walking_speed\"] * multi el",
+        "matched_text": "InputDown(\"left\")",
+        "mod_name": "GMod-esque Menu"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\physall\\main.lua",
+        "line_number": 2323,
+        "key_name": "left",
+        "context": "(InputDown('left') and -1 or 0) + (InputDown('right') and 1 or 0),",
+        "matched_text": "InputDown('left')",
+        "mod_name": "Combined Physics Mod for Teardown"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\tdvr\\main.lua",
+        "line_number": 74,
+        "key_name": "left",
+        "context": "local x = InputDown(\"right\") and 1 or InputDown(\"left\") and -1 or 0",
+        "matched_text": "InputDown(\"left\")",
+        "mod_name": "Teardown VR Mod with LÖVR Integration"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\tdvr\\main.lua",
+        "line_number": 253,
+        "key_name": "left",
+        "context": "local left = InputDown(\"left\")",
+        "matched_text": "InputDown(\"left\")",
+        "mod_name": "Teardown VR Mod with LÖVR Integration"
       }
     ],
     "right": [
@@ -31214,6 +33630,62 @@
         "context": "elseif InputDown(\"right\") then",
         "matched_text": "InputDown(\"right\")",
         "mod_name": "Manual Transmission"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\Artzert's Utilities [TDMP] Copy\\main.lua",
+        "line_number": 277,
+        "key_name": "right",
+        "context": "if (InputDown(\"right\")) then",
+        "matched_text": "InputDown(\"right\")",
+        "mod_name": "Artzert's Utilities [TDMP]"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\Artzert's Utilities [TDMP] Copy\\main.lua",
+        "line_number": 354,
+        "key_name": "right",
+        "context": "if (InputDown(\"right\")) then",
+        "matched_text": "InputDown(\"right\")",
+        "mod_name": "Artzert's Utilities [TDMP]"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\GMod-esque Menu Copy\\main.lua",
+        "line_number": 2059,
+        "key_name": "right",
+        "context": "ds = InputDown(\"right\") and operations[\"walking_speed\"] * (1 + dt) or 0]]",
+        "matched_text": "InputDown(\"right\")",
+        "mod_name": "GMod-esque Menu"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\GMod-esque Menu Copy\\main.lua",
+        "line_number": 2063,
+        "key_name": "right",
+        "context": "--if InputDown(\"right\") then ds = operations[\"walking_speed\"] * multi els",
+        "matched_text": "InputDown(\"right\")",
+        "mod_name": "GMod-esque Menu"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\physall\\main.lua",
+        "line_number": 2323,
+        "key_name": "right",
+        "context": "(InputDown('left') and -1 or 0) + (InputDown('right') and 1 or 0),",
+        "matched_text": "InputDown('right')",
+        "mod_name": "Combined Physics Mod for Teardown"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\tdvr\\main.lua",
+        "line_number": 74,
+        "key_name": "right",
+        "context": "local x = InputDown(\"right\") and 1 or InputDown(\"left\") and -1 or 0",
+        "matched_text": "InputDown(\"right\")",
+        "mod_name": "Teardown VR Mod with LÖVR Integration"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\tdvr\\main.lua",
+        "line_number": 254,
+        "key_name": "right",
+        "context": "local right = InputDown(\"right\")",
+        "matched_text": "InputDown(\"right\")",
+        "mod_name": "Teardown VR Mod with LÖVR Integration"
       }
     ],
     "q": [
@@ -31930,6 +34402,46 @@
         "context": "if InputPressed(\"m\") and InputDown(\"p\") then",
         "matched_text": "InputPressed(\"m\")",
         "mod_name": "[PlaceHolder]'s Stupid Simple Gravity Switcher Mod"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\3067970452\\main.lua",
+        "line_number": 477,
+        "key_name": "m",
+        "context": "if toolSelected and InputPressed(\"m\") then",
+        "matched_text": "InputPressed(\"m\")",
+        "mod_name": "Smoke Gun With Even More Extra Options"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\multiphysics\\ref\\prgd\\main.lua",
+        "line_number": 531,
+        "key_name": "m",
+        "context": "if InputPressed(\"m\") and GetBool(\"savegame.mod.progdest.4ce_ENABLE_CON",
+        "matched_text": "InputPressed(\"m\")",
+        "mod_name": "Multiphysics (PRGD + IBSIT + MBCS)"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\pcomb\\ref\\prgd\\main.lua",
+        "line_number": 531,
+        "key_name": "m",
+        "context": "if InputPressed(\"m\") and GetBool(\"savegame.mod.progdest.4ce_ENABLE_CON",
+        "matched_text": "InputPressed(\"m\")",
+        "mod_name": "Physics Combination Mod"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\physall\\ref\\Progressive Destruction Mod\\main.lua",
+        "line_number": 531,
+        "key_name": "m",
+        "context": "if InputPressed(\"m\") and GetBool(\"savegame.mod.progdest.4ce_ENABLE_CON",
+        "matched_text": "InputPressed(\"m\")",
+        "mod_name": "Combined Physics Mod for Teardown"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\physcomod\\main.lua",
+        "line_number": 1081,
+        "key_name": "m",
+        "context": "if InputPressed(\"m\") and GetBool(\"savegame.mod.combined.force_ENABLE_C",
+        "matched_text": "InputPressed(\"m\")",
+        "mod_name": "Combined Physics Destruction Mod"
       }
     ],
     "n": [
@@ -32270,6 +34782,22 @@
         "context": "if (InputDown(\"f8\") and InputPressed(\"f9\")) or (InputDown(\"grab\") and InputPressed(\"extra1\") and ToggleMenu) then",
         "matched_text": "InputDown(\"grab\")",
         "mod_name": "Uzi's SICK AS HELL RAILGUN"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\3067970452\\main.lua",
+        "line_number": 533,
+        "key_name": "grab",
+        "context": "if toolSelected and InputPressed(\"grab\") and aimHitPoint then",
+        "matched_text": "InputPressed(\"grab\")",
+        "mod_name": "Smoke Gun With Even More Extra Options"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\GMod-esque Menu Copy\\main.lua",
+        "line_number": 2472,
+        "key_name": "grab",
+        "context": "elseif InputPressed(\"grab\") and not InputDown(operations[\"context_key\"]) then",
+        "matched_text": "InputPressed(\"grab\")",
+        "mod_name": "GMod-esque Menu"
       }
     ],
     "return": [
@@ -32344,6 +34872,46 @@
         "context": "if InputPressed(\"return\") then",
         "matched_text": "InputPressed(\"return\")",
         "mod_name": "The Pentagon U.S Remastered"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\devcon\\main.lua",
+        "line_number": 108,
+        "key_name": "return",
+        "context": "if InputPressed and InputPressed(\"return\") then",
+        "matched_text": "InputPressed(\"return\")",
+        "mod_name": "Lua Console Overlay Mod"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\devcon\\main.lua",
+        "line_number": 3766,
+        "key_name": "return",
+        "context": "pressed = InputPressed and InputPressed(\"return\")",
+        "matched_text": "InputPressed(\"return\")",
+        "mod_name": "Lua Console Overlay Mod"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\Registry Editor Copy\\main.lua",
+        "line_number": 233,
+        "key_name": "return",
+        "context": "tton(last_max_key_width, grid_row_height) and not InputReleased(\"return\") then",
+        "matched_text": "InputReleased(\"return\")",
+        "mod_name": "Registry Editor"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\Registry Editor Copy\\main.lua",
+        "line_number": 299,
+        "key_name": "return",
+        "context": "on(last_max_value_width, grid_row_height) and not InputReleased(\"return\") then",
+        "matched_text": "InputReleased(\"return\")",
+        "mod_name": "Registry Editor"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\ScriptExecutor\\main.lua",
+        "line_number": 29,
+        "key_name": "return",
+        "context": "if InputPressed(\"return\") then",
+        "matched_text": "InputPressed(\"return\")",
+        "mod_name": "Script Executor"
       }
     ],
     "backspace": [
@@ -32626,6 +35194,14 @@
         "context": "if InputPressed(\"i\") and InputDown(\"p\") then",
         "matched_text": "InputPressed(\"i\")",
         "mod_name": "[PlaceHolder]'s Stupid Simple Gravity Switcher Mod"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\pcomb\\main.lua",
+        "line_number": 3512,
+        "key_name": "i",
+        "context": "if InputPressed(\"i\") and InputDown(\"ctrl\") then  -- Ctrl+P to open/clo",
+        "matched_text": "InputPressed(\"i\")",
+        "mod_name": "Physics Combination Mod"
       }
     ],
     "z": [
@@ -32816,6 +35392,14 @@
         "context": "if InputPressed(\"x\") then explode = true else explode = false end",
         "matched_text": "InputPressed(\"x\")",
         "mod_name": "Telekinesis"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\GMod-esque Menu Copy\\main.lua",
+        "line_number": 230,
+        "key_name": "x",
+        "context": "if InputDown(\"x\") then",
+        "matched_text": "InputDown(\"x\")",
+        "mod_name": "GMod-esque Menu"
       }
     ],
     "c": [
@@ -33204,6 +35788,54 @@
         "context": "if InputPressed(\"pause\") then",
         "matched_text": "InputPressed(\"pause\")",
         "mod_name": "Responsive Ragdoll"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\3067970452\\main.lua",
+        "line_number": 461,
+        "key_name": "pause",
+        "context": "if hudVisible and InputPressed(\"pause\") then",
+        "matched_text": "InputPressed(\"pause\")",
+        "mod_name": "Smoke Gun With Even More Extra Options"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\3067970452\\main.lua",
+        "line_number": 690,
+        "key_name": "pause",
+        "context": "if UiTextButton(\"Close\", 180, 32) or InputPressed(\"pause\") then",
+        "matched_text": "InputPressed(\"pause\")",
+        "mod_name": "Smoke Gun With Even More Extra Options"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\GMod-esque Menu Copy\\main.lua",
+        "line_number": 114,
+        "key_name": "pause",
+        "context": "if InputPressed(\"pause\") then",
+        "matched_text": "InputPressed(\"pause\")",
+        "mod_name": "GMod-esque Menu"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\GMod-esque Menu Copy\\main.lua",
+        "line_number": 1752,
+        "key_name": "pause",
+        "context": "if InputPressed(\"pause\") and not GMMRebinding.state then",
+        "matched_text": "InputPressed(\"pause\")",
+        "mod_name": "GMod-esque Menu"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\physall\\ref\\Structural Integrity & Collateral Damage System\\main.lua",
+        "line_number": 416,
+        "key_name": "pause",
+        "context": "if (InputPressed(\"pause\") == true) then",
+        "matched_text": "InputPressed(\"pause\")",
+        "mod_name": "Combined Physics Mod for Teardown"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\physall\\ref\\Structural Integrity & Collateral Damage System\\options.lua",
+        "line_number": 420,
+        "key_name": "pause",
+        "context": "if (InputPressed(\"pause\") == true) then",
+        "matched_text": "InputPressed(\"pause\")",
+        "mod_name": "Combined Physics Mod for Teardown"
       }
     ],
     "crouch": [
@@ -33334,6 +35966,14 @@
         "context": "if InputDown(\"crouch\") then",
         "matched_text": "InputDown(\"crouch\")",
         "mod_name": "Manual Transmission"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\tdvr\\main.lua",
+        "line_number": 256,
+        "key_name": "crouch",
+        "context": "local down = InputDown(\"crouch\")",
+        "matched_text": "InputDown(\"crouch\")",
+        "mod_name": "Teardown VR Mod with LÖVR Integration"
       }
     ],
     "jump": [
@@ -33392,6 +36032,14 @@
         "context": "if InputDown(\"jump\") then",
         "matched_text": "InputDown(\"jump\")",
         "mod_name": "Manual Transmission"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\tdvr\\main.lua",
+        "line_number": 255,
+        "key_name": "jump",
+        "context": "local up = InputDown(\"jump\")",
+        "matched_text": "InputDown(\"jump\")",
+        "mod_name": "Teardown VR Mod with LÖVR Integration"
       }
     ],
     "K": [
@@ -33688,6 +36336,14 @@
         "context": "--if InputPressed(\"h\") then DEBUG = not DEBUG DebugPrint(\"Debug \"..tostr",
         "matched_text": "InputPressed(\"h\")",
         "mod_name": "Detailed Weather"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\3067970452\\main.lua",
+        "line_number": 467,
+        "key_name": "h",
+        "context": "if toolSelected and InputPressed(\"h\") then",
+        "matched_text": "InputPressed(\"h\")",
+        "mod_name": "Smoke Gun With Even More Extra Options"
       }
     ],
     "Toggle_Void_Mode": [
@@ -33852,6 +36508,14 @@
         "context": "-- if InputPressed(\"v\") then PlaySound(SOUNDS.Dryfire,GetPlayerCameraTran",
         "matched_text": "InputPressed(\"v\")",
         "mod_name": "[TABS] Vehicle Framework"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\GMod-esque Menu Copy\\main.lua",
+        "line_number": 232,
+        "key_name": "v",
+        "context": "elseif InputDown(\"v\") then",
+        "matched_text": "InputDown(\"v\")",
+        "mod_name": "GMod-esque Menu"
       }
     ],
     "downarrow": [
@@ -33910,6 +36574,14 @@
         "context": "if currentFov < 100 and InputPressed(\"downarrow\") then",
         "matched_text": "InputPressed(\"downarrow\")",
         "mod_name": "2008 Nokia 6300"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\devcon\\main.lua",
+        "line_number": 182,
+        "key_name": "downarrow",
+        "context": "elseif InputPressed and InputPressed(\"downarrow\") then",
+        "matched_text": "InputPressed(\"downarrow\")",
+        "mod_name": "Lua Console Overlay Mod"
       }
     ],
     "uparrow": [
@@ -33968,6 +36640,14 @@
         "context": "elseif currentFov > 40 and InputPressed(\"uparrow\") then",
         "matched_text": "InputPressed(\"uparrow\")",
         "mod_name": "2008 Nokia 6300"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\devcon\\main.lua",
+        "line_number": 169,
+        "key_name": "uparrow",
+        "context": "elseif InputPressed and InputPressed(\"uparrow\") then",
+        "matched_text": "InputPressed(\"uparrow\")",
+        "mod_name": "Lua Console Overlay Mod"
       }
     ],
     "f1": [
@@ -34288,6 +36968,14 @@
         "context": "_box and not edit_value_text_box:has_focus()) and InputPressed(\"f11\") then",
         "matched_text": "InputPressed(\"f11\")",
         "mod_name": "Registry Editor"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\Registry Editor Copy\\main.lua",
+        "line_number": 47,
+        "key_name": "f11",
+        "context": "_box and not edit_value_text_box:has_focus()) and InputPressed(\"f11\") then",
+        "matched_text": "InputPressed(\"f11\")",
+        "mod_name": "Registry Editor"
       }
     ],
     "f9": [
@@ -34322,6 +37010,14 @@
         "context": "if InputDown(\"f8\") and InputPressed(\"f9\") then",
         "matched_text": "InputPressed(\"f9\")",
         "mod_name": "Uzi's SICK AS HELL RAILGUN"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\2889709870\\main.lua",
+        "line_number": 168,
+        "key_name": "f9",
+        "context": "if InputPressed(\"f9\") then -- toggle debug overlay feature 11",
+        "matched_text": "InputPressed(\"f9\")",
+        "mod_name": "Impact Based Structural Integrity Test"
       }
     ],
     "f10": [
@@ -35444,6 +38140,14 @@
         "context": "if InputPressed(\"extra0\") then",
         "matched_text": "InputPressed(\"extra0\")",
         "mod_name": "Uzi's SICK AS HELL RAILGUN"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\tdvr\\main.lua",
+        "line_number": 257,
+        "key_name": "extra0",
+        "context": "local sprint = InputDown(\"extra0\")",
+        "matched_text": "InputDown(\"extra0\")",
+        "mod_name": "Teardown VR Mod with LÖVR Integration"
       }
     ],
     "extra1": [
@@ -35608,6 +38312,194 @@
         "context": "if InputPressed(\"]\") then",
         "matched_text": "InputPressed(\"]\")",
         "mod_name": "ProBallistics"
+      }
+    ],
+    "pageup": [
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\2889709870\\main.lua",
+        "line_number": 162,
+        "key_name": "pageup",
+        "context": "if InputPressed(\"pageup\") then",
+        "matched_text": "InputPressed(\"pageup\")",
+        "mod_name": "Impact Based Structural Integrity Test"
+      }
+    ],
+    "pagedown": [
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\2889709870\\main.lua",
+        "line_number": 165,
+        "key_name": "pagedown",
+        "context": "if InputPressed(\"pagedown\") then",
+        "matched_text": "InputPressed(\"pagedown\")",
+        "mod_name": "Impact Based Structural Integrity Test"
+      }
+    ],
+    "home": [
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\devcon\\main.lua",
+        "line_number": 99,
+        "key_name": "home",
+        "context": "if InputPressed and InputPressed(\"home\") then",
+        "matched_text": "InputPressed(\"home\")",
+        "mod_name": "Lua Console Overlay Mod"
+      }
+    ],
+    "tab": [
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\devcon\\main.lua",
+        "line_number": 115,
+        "key_name": "tab",
+        "context": "elseif InputPressed and InputPressed(\"tab\") then",
+        "matched_text": "InputPressed(\"tab\")",
+        "mod_name": "Lua Console Overlay Mod"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\devcon\\main.lua",
+        "line_number": 3768,
+        "key_name": "tab",
+        "context": "pressed = InputPressed and InputPressed(\"tab\")",
+        "matched_text": "InputPressed(\"tab\")",
+        "mod_name": "Lua Console Overlay Mod"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\pcomb\\main.lua",
+        "line_number": 3518,
+        "key_name": "tab",
+        "context": "if InputPressed(\"control\") and InputDown(\"tab\") then",
+        "matched_text": "InputDown(\"tab\")",
+        "mod_name": "Physics Combination Mod"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\pcomb\\main.lua",
+        "line_number": 3524,
+        "key_name": "tab",
+        "context": "elseif InputPressed(\"tab\") then",
+        "matched_text": "InputPressed(\"tab\")",
+        "mod_name": "Physics Combination Mod"
+      }
+    ],
+    "end": [
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\devcon\\main.lua",
+        "line_number": 162,
+        "key_name": "end",
+        "context": "elseif InputPressed and InputPressed(\"end\") then",
+        "matched_text": "InputPressed(\"end\")",
+        "mod_name": "Lua Console Overlay Mod"
+      }
+    ],
+    "escape": [
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\devcon\\main.lua",
+        "line_number": 3770,
+        "key_name": "escape",
+        "context": "pressed = InputPressed and InputPressed(\"escape\")",
+        "matched_text": "InputPressed(\"escape\")",
+        "mod_name": "Lua Console Overlay Mod"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\pcomb\\main.lua",
+        "line_number": 3534,
+        "key_name": "escape",
+        "context": "if pauseMenuEnabled and InputPressed(\"escape\") then",
+        "matched_text": "InputPressed(\"escape\")",
+        "mod_name": "Physics Combination Mod"
+      }
+    ],
+    "J": [
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\devconsole\\main.lua",
+        "line_number": 117,
+        "key_name": "J",
+        "context": "if InputPressed(\"J\") then",
+        "matched_text": "InputPressed(\"J\")",
+        "mod_name": "devconsole"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\_devconsole\\main.lua",
+        "line_number": 77,
+        "key_name": "J",
+        "context": "if InputPressed(\"J\") then",
+        "matched_text": "InputPressed(\"J\")",
+        "mod_name": "_devconsole"
+      }
+    ],
+    "control": [
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\pcomb\\main.lua",
+        "line_number": 3518,
+        "key_name": "control",
+        "context": "if InputPressed(\"control\") and InputDown(\"tab\") then",
+        "matched_text": "InputPressed(\"control\")",
+        "mod_name": "Physics Combination Mod"
+      }
+    ],
+    "I": [
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\physall\\main.lua",
+        "line_number": 3740,
+        "key_name": "I",
+        "context": "elseif SettingsKey == \"\" and InputReleased(\"I\") then",
+        "matched_text": "InputReleased(\"I\")",
+        "mod_name": "Combined Physics Mod for Teardown"
+      }
+    ],
+    "KEY": [
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\tdsh\\main.lua",
+        "line_number": 214,
+        "key_name": "KEY",
+        "context": "-- 1. InputPressed(\"KEY\") or InputDown(\"KEY\")",
+        "matched_text": "InputPressed(\"KEY\")",
+        "mod_name": "Hotkey Viewer"
+      },
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\tdsh\\main.lua",
+        "line_number": 214,
+        "key_name": "KEY",
+        "context": "-- 1. InputPressed(\"KEY\") or InputDown(\"KEY\")",
+        "matched_text": "InputDown(\"KEY\")",
+        "mod_name": "Hotkey Viewer"
+      }
+    ],
+    "secondary": [
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\tdWater\\main.lua",
+        "line_number": 243,
+        "key_name": "secondary",
+        "context": "local secondary = CFG.secondaryBoost and InputDown(\"secondary\")",
+        "matched_text": "InputDown(\"secondary\")",
+        "mod_name": "Teardown Water (AI Edition)"
+      }
+    ],
+    "reload": [
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\tdWater\\main.lua",
+        "line_number": 341,
+        "key_name": "reload",
+        "context": "if emit and InputPressed(\"reload\") then startEmissionFromRay() end",
+        "matched_text": "InputPressed(\"reload\")",
+        "mod_name": "Teardown Water (AI Edition)"
+      }
+    ],
+    "F": [
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\Water simulation Copy\\main.lua",
+        "line_number": 12,
+        "key_name": "F",
+        "context": "if InputDown(\"F\") then",
+        "matched_text": "InputDown(\"F\")",
+        "mod_name": "Water simulation"
+      }
+    ],
+    "Y": [
+      {
+        "file_path": "C:\\Users\\jared\\Documents\\Teardown\\mods\\WaterRevamp\\main.lua",
+        "line_number": 128,
+        "key_name": "Y",
+        "context": "if InputPressed(\"Y\") then",
+        "matched_text": "InputPressed(\"Y\")",
+        "mod_name": "WaterRevamp"
       }
     ]
   },
@@ -36642,8 +39534,57 @@
     "C:\\Program Files (x86)\\Steam\\steamapps\\workshop\\content\\1167630\\3614061813": "Connections API",
     "C:\\Program Files (x86)\\Steam\\steamapps\\workshop\\content\\1167630\\3614528047": "3614528047",
     "C:\\Program Files (x86)\\Steam\\steamapps\\workshop\\content\\1167630\\3614884252": "Awatto Airport (Start from OPTIONS not Play [Finaly Fixed])",
-    "C:\\Program Files (x86)\\Steam\\steamapps\\workshop\\content\\1167630\\3619320878": "Steve's NPCS"
+    "C:\\Program Files (x86)\\Steam\\steamapps\\workshop\\content\\1167630\\3619320878": "Steve's NPCS",
+    "C:\\Users\\jared\\Documents\\Teardown\\mods\\2889709870": "Impact Based Structural Integrity Test",
+    "C:\\Users\\jared\\Documents\\Teardown\\mods\\3067970452": "Smoke Gun With Even More Extra Options",
+    "C:\\Users\\jared\\Documents\\Teardown\\mods\\Artzert's Utilities [TDMP] Copy": "Artzert's Utilities [TDMP]",
+    "C:\\Users\\jared\\Documents\\Teardown\\mods\\Awatto Airport (Start from OPTIONS not Play [Finaly Fixed]) Copy": "Awatto Airport (Start from OPTIONS not Play [Finaly Fixed])",
+    "C:\\Users\\jared\\Documents\\Teardown\\mods\\Bigger Water simulation Copy": "Bigger Water simulation",
+    "C:\\Users\\jared\\Documents\\Teardown\\mods\\Boeing 777 Plane Copy 2": "Boeing 777 – Flyable Plane Mod",
+    "C:\\Users\\jared\\Documents\\Teardown\\mods\\Boeing 777 Plane Copy 3": "Boeing 777 Plane Copy 3",
+    "C:\\Users\\jared\\Documents\\Teardown\\mods\\custom_plane": "Make Your Own Car",
+    "C:\\Users\\jared\\Documents\\Teardown\\mods\\D.A.M Map Copy": "D.A.M Map",
+    "C:\\Users\\jared\\Documents\\Teardown\\mods\\Debug Menu Copy": "Debug Menu",
+    "C:\\Users\\jared\\Documents\\Teardown\\mods\\devcon": "Lua Console Overlay Mod",
+    "C:\\Users\\jared\\Documents\\Teardown\\mods\\devconsole": "devconsole",
+    "C:\\Users\\jared\\Documents\\Teardown\\mods\\devMap": "devMap",
+    "C:\\Users\\jared\\Documents\\Teardown\\mods\\Dynamic Office Copy": "Dynamic Office",
+    "C:\\Users\\jared\\Documents\\Teardown\\mods\\Electrical Pack Copy": "Electrical Pack",
+    "C:\\Users\\jared\\Documents\\Teardown\\mods\\Filev city 2 Copy": "Filev city 2",
+    "C:\\Users\\jared\\Documents\\Teardown\\mods\\Gas Can Copy": "Gas Can",
+    "C:\\Users\\jared\\Documents\\Teardown\\mods\\GMod-esque Menu Copy": "GMod-esque Menu",
+    "C:\\Users\\jared\\Documents\\Teardown\\mods\\ibsit": "Impact Based Structural Integrity Test v2.0",
+    "C:\\Users\\jared\\Documents\\Teardown\\mods\\ingame_regedit": "MMRV: In-Game Registry Editor",
+    "C:\\Users\\jared\\Documents\\Teardown\\mods\\kszabi Copy": "kszabi",
+    "C:\\Users\\jared\\Documents\\Teardown\\mods\\multiphysics": "Multiphysics (PRGD + IBSIT + MBCS)",
+    "C:\\Users\\jared\\Documents\\Teardown\\mods\\pcomb": "Physics Combination Mod",
+    "C:\\Users\\jared\\Documents\\Teardown\\mods\\physall": "Combined Physics Mod for Teardown",
+    "C:\\Users\\jared\\Documents\\Teardown\\mods\\physcomod": "Combined Physics Destruction Mod",
+    "C:\\Users\\jared\\Documents\\Teardown\\mods\\Prop Gallery Copy": "Prop Gallery",
+    "C:\\Users\\jared\\Documents\\Teardown\\mods\\Real Russian Railroads": "Real Russian Railroads",
+    "C:\\Users\\jared\\Documents\\Teardown\\mods\\Registry Editor Copy": "Registry Editor",
+    "C:\\Users\\jared\\Documents\\Teardown\\mods\\ScriptExecutor": "Script Executor",
+    "C:\\Users\\jared\\Documents\\Teardown\\mods\\shed": "shed",
+    "C:\\Users\\jared\\Documents\\Teardown\\mods\\SHRED   Shrapnel Hits, Rips and Emits Destruction Copy": "SHRED : Shrapnel Hits, Rips and Emits Destruction",
+    "C:\\Users\\jared\\Documents\\Teardown\\mods\\tdsh": "Hotkey Viewer",
+    "C:\\Users\\jared\\Documents\\Teardown\\mods\\tdTesting": "tdWater Testing Map",
+    "C:\\Users\\jared\\Documents\\Teardown\\mods\\tdvr": "Teardown VR Mod with LÖVR Integration",
+    "C:\\Users\\jared\\Documents\\Teardown\\mods\\tdWater": "Teardown Water (AI Edition)",
+    "C:\\Users\\jared\\Documents\\Teardown\\mods\\Teardown Visual and Physics Enhance Mod Copy": "Teardown Visual and Physics Enhance Mod",
+    "C:\\Users\\jared\\Documents\\Teardown\\mods\\Teardown__Flying-Planes": "Flying Planes",
+    "C:\\Users\\jared\\Documents\\Teardown\\mods\\Tearware Copy": "Tearware",
+    "C:\\Users\\jared\\Documents\\Teardown\\mods\\Tool Wheel Copy": "Tool Wheel",
+    "C:\\Users\\jared\\Documents\\Teardown\\mods\\twintowers": "Twin towers (World Trade Center)",
+    "C:\\Users\\jared\\Documents\\Teardown\\mods\\Water simulation Copy": "Water simulation",
+    "C:\\Users\\jared\\Documents\\Teardown\\mods\\WaterRevamp": "WaterRevamp",
+    "C:\\Users\\jared\\Documents\\Teardown\\mods\\watertest": "watertest",
+    "C:\\Users\\jared\\Documents\\Teardown\\mods\\[HRS - Headcrab's Railway System] Showcase Copy": "[HRS - Headcrab's Railway System] Showcase",
+    "C:\\Users\\jared\\Documents\\Teardown\\mods\\[KoT& X] Soviet aircraft pack Copy": "[KoT& X] Soviet aircraft pack",
+    "C:\\Users\\jared\\Documents\\Teardown\\mods\\[L21] Northern Overpass Copy": "[L21] Northern Overpass Copy",
+    "C:\\Users\\jared\\Documents\\Teardown\\mods\\[L21] Northern Overpass Copy 2": "[L21] Northern Overpass Copy 2",
+    "C:\\Users\\jared\\Documents\\Teardown\\mods\\[MIG-DAM]Airbus A-320 Copy": "[MIG-DAM]Airbus A-320 Copy",
+    "C:\\Users\\jared\\Documents\\Teardown\\mods\\_devconsole": "_devconsole"
   },
-  "total_files_scanned": 264,
-  "total_matches": 2209
+  "total_files_scanned": 295,
+  "total_matches": 2388
 }
