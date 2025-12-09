@@ -1,1 +1,4 @@
 dev
+output
+csv_output
+__pycache__
