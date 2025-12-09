@@ -73,7 +73,7 @@ class KeybindScannerGUI:
         right_options.grid(row=0, column=1, sticky=(tk.W, tk.N), padx=(20, 0))
 
         ttk.Label(right_options, text="Max File Size (MB):").grid(row=0, column=0, sticky=tk.W)
-        ttk.Spinbox(right_options, from_=1, to=100, textvariable=tk.IntVar(value=10)).grid(row=1, column=0, sticky=(tk.W, tk.E))
+        ttk.Spinbox(right_options, from_=1, to=100, textvariable=self.max_file_size).grid(row=1, column=0, sticky=(tk.W, tk.E))
 
         ttk.Label(right_options, text="Encoding:").grid(row=2, column=0, sticky=tk.W, pady=(10, 0))
         ttk.Entry(right_options, textvariable=self.encoding).grid(row=3, column=0, sticky=(tk.W, tk.E))
@@ -191,7 +191,7 @@ class KeybindScannerGUI:
             patterns=patterns,
             case_insensitive=self.case_insensitive.get(),
             whole_word=self.whole_word.get(),
-            max_file_size=self.max_file_size.get(),
+            max_file_size=self.max_file_size.get() * 1024 * 1024,
             encoding=self.encoding.get()
         )
 

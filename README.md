@@ -12,6 +12,7 @@ A tool to detect keybinds used in Teardown game mods by scanning Lua scripts and
 - Configurable file size limits and encoding
 - Dry-run mode for testing
 - Comprehensive logging
+- **Graphical User Interface (GUI)** for easy operation
 
 ## Installation
 
@@ -24,15 +25,33 @@ Requires Python 3.6+
 
 ## Usage
 
+### Command Line Interface
+
 ```bash
 python keybind_scanner.py [OPTIONS] DIRECTORY [DIRECTORY ...]
 ```
 
-### Arguments
+### Graphical User Interface
+
+```bash
+python gui.py
+```
+
+The GUI provides an intuitive interface for:
+
+- Selecting directories to scan
+- Configuring scan options
+- Choosing output formats and location
+- Running scans with progress indication
+- Viewing logs and results
+
+**Note:** The GUI requires Tkinter, which is included with Python by default on most systems.
+
+### Arguments (CLI)
 
 - `DIRECTORY`: One or more directories to scan recursively
 
-### Options
+### Options (CLI)
 
 - `-o, --output OUTPUT`: Output directory (default: output)
 - `-f, --formats FORMATS`: Output formats: json, csv (default: json)
