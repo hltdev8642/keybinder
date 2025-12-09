@@ -1,0 +1,4 @@
+name: Sample Mod
+description: A sample mod for testing keybind scanner
+author: Test Author
+version: 1.0

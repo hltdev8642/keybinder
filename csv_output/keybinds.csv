@@ -1,0 +1,7 @@
+file_path,line_number,key_name,context,matched_text,mod_name
+sample_mod\main.lua,6,Key_X,"if InputPressed(""Key_X"") then","InputPressed(""Key_X"")",Sample Mod
+sample_mod\main.lua,11,Key_C,"if InputDown(""Key_C"") then","InputDown(""Key_C"")",Sample Mod
+sample_mod\main.lua,16,interact,"if InputReleased(""interact"") then","InputReleased(""interact"")",Sample Mod
+sample_mod\main.lua,22,mousewheel,"local value = InputValue(""mousewheel"")","InputValue(""mousewheel"")",Sample Mod
+sample_mod\options.lua,3,menu_accept,"if InputPressed(""menu_accept"") then","InputPressed(""menu_accept"")",Sample Mod
+sample_mod\options.lua,7,Key_F1,"if InputDown(""Key_F1"") then","InputDown(""Key_F1"")",Sample Mod

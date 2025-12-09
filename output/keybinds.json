@@ -1,0 +1,119 @@
+{
+  "results": [
+    {
+      "file_path": "sample_mod\\main.lua",
+      "line_number": 6,
+      "key_name": "Key_X",
+      "context": "if InputPressed(\"Key_X\") then",
+      "matched_text": "InputPressed(\"Key_X\")",
+      "mod_name": "Sample Mod"
+    },
+    {
+      "file_path": "sample_mod\\main.lua",
+      "line_number": 11,
+      "key_name": "Key_C",
+      "context": "if InputDown(\"Key_C\") then",
+      "matched_text": "InputDown(\"Key_C\")",
+      "mod_name": "Sample Mod"
+    },
+    {
+      "file_path": "sample_mod\\main.lua",
+      "line_number": 16,
+      "key_name": "interact",
+      "context": "if InputReleased(\"interact\") then",
+      "matched_text": "InputReleased(\"interact\")",
+      "mod_name": "Sample Mod"
+    },
+    {
+      "file_path": "sample_mod\\main.lua",
+      "line_number": 22,
+      "key_name": "mousewheel",
+      "context": "local value = InputValue(\"mousewheel\")",
+      "matched_text": "InputValue(\"mousewheel\")",
+      "mod_name": "Sample Mod"
+    },
+    {
+      "file_path": "sample_mod\\options.lua",
+      "line_number": 3,
+      "key_name": "menu_accept",
+      "context": "if InputPressed(\"menu_accept\") then",
+      "matched_text": "InputPressed(\"menu_accept\")",
+      "mod_name": "Sample Mod"
+    },
+    {
+      "file_path": "sample_mod\\options.lua",
+      "line_number": 7,
+      "key_name": "Key_F1",
+      "context": "if InputDown(\"Key_F1\") then",
+      "matched_text": "InputDown(\"Key_F1\")",
+      "mod_name": "Sample Mod"
+    }
+  ],
+  "aggregated": {
+    "Key_X": [
+      {
+        "file_path": "sample_mod\\main.lua",
+        "line_number": 6,
+        "key_name": "Key_X",
+        "context": "if InputPressed(\"Key_X\") then",
+        "matched_text": "InputPressed(\"Key_X\")",
+        "mod_name": "Sample Mod"
+      }
+    ],
+    "Key_C": [
+      {
+        "file_path": "sample_mod\\main.lua",
+        "line_number": 11,
+        "key_name": "Key_C",
+        "context": "if InputDown(\"Key_C\") then",
+        "matched_text": "InputDown(\"Key_C\")",
+        "mod_name": "Sample Mod"
+      }
+    ],
+    "interact": [
+      {
+        "file_path": "sample_mod\\main.lua",
+        "line_number": 16,
+        "key_name": "interact",
+        "context": "if InputReleased(\"interact\") then",
+        "matched_text": "InputReleased(\"interact\")",
+        "mod_name": "Sample Mod"
+      }
+    ],
+    "mousewheel": [
+      {
+        "file_path": "sample_mod\\main.lua",
+        "line_number": 22,
+        "key_name": "mousewheel",
+        "context": "local value = InputValue(\"mousewheel\")",
+        "matched_text": "InputValue(\"mousewheel\")",
+        "mod_name": "Sample Mod"
+      }
+    ],
+    "menu_accept": [
+      {
+        "file_path": "sample_mod\\options.lua",
+        "line_number": 3,
+        "key_name": "menu_accept",
+        "context": "if InputPressed(\"menu_accept\") then",
+        "matched_text": "InputPressed(\"menu_accept\")",
+        "mod_name": "Sample Mod"
+      }
+    ],
+    "Key_F1": [
+      {
+        "file_path": "sample_mod\\options.lua",
+        "line_number": 7,
+        "key_name": "Key_F1",
+        "context": "if InputDown(\"Key_F1\") then",
+        "matched_text": "InputDown(\"Key_F1\")",
+        "mod_name": "Sample Mod"
+      }
+    ]
+  },
+  "mod_info": {
+    "sample_mod": "Sample Mod"
+  },
+  "total_files_scanned": 2,
+  "total_matches": 6
+}
