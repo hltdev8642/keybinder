@@ -82,17 +82,54 @@ class KeybindScanner:
         return any(pattern.match(filename) for pattern in FILE_PATTERNS)
 
     def extract_mod_name(self, dir_path: Path) -> Optional[str]:
-        """Extract mod name from info.txt if available."""
+        """Extract mod name from info.txt or readme* files if available."""
+        import re
+        
+        # First, try info.txt
         info_file = dir_path / 'info.txt'
         if info_file.exists():
+            self.logger.debug(f"Checking {info_file} for mod name")
             try:
                 with open(info_file, 'r', encoding=self.encoding) as f:
-                    for line in f:
-                        if line.lower().startswith('name:'):
-                            return line.split(':', 1)[1].strip()
+                    for line_num, line in enumerate(f, 1):
+                        # Match lines like "name: value", "title = value", etc., allowing leading whitespace
+                        match = re.match(r'^\s*(?:name|title|mod_name)\s*[=:]\s*(.+)$', line, re.IGNORECASE)
+                        if match:
+                            name = match.group(1).strip()
+                            self.logger.debug(f"Found mod name in {info_file} line {line_num}: {name}")
+                            return name
+                self.logger.debug(f"No name field found in {info_file}")
             except Exception as e:
                 self.logger.warning(f"Error reading {info_file}: {e}")
-        return None
+        else:
+            self.logger.debug(f"{info_file} does not exist")
+
+        # If not found in info.txt, try readme files
+        for file_path in dir_path.iterdir():
+            if file_path.is_file() and file_path.name.lower().startswith('readme'):
+                self.logger.debug(f"Checking {file_path} for mod name")
+                try:
+                    with open(file_path, 'r', encoding=self.encoding) as f:
+                        for line_num, line in enumerate(f, 1):
+                            line = line.strip()
+                            if line:
+                                # Check for markdown header
+                                if line.startswith('# '):
+                                    name = line[2:].strip()
+                                    self.logger.debug(f"Found mod name in {file_path} line {line_num}: {name}")
+                                    return name
+                                # Or just take the first non-empty line as title
+                                name = line
+                                self.logger.debug(f"Using first line of {file_path} as mod name: {name}")
+                                return name
+                except Exception as e:
+                    self.logger.warning(f"Error reading {file_path}: {e}")
+
+        self.logger.debug(f"No mod name found for {dir_path}")
+        # Fallback to directory name
+        fallback_name = dir_path.name
+        self.logger.debug(f"Using directory name as fallback: {fallback_name}")
+        return fallback_name
 
     def scan_file(self, file_path: Path) -> List[Dict]:
         """Scan a single file for keybinds."""
@@ -132,12 +169,59 @@ class KeybindScanner:
 
         return results
 
+    def collect_mod_directories(self, directories: List[Path]) -> List[Path]:
+        """Collect actual mod directories from input directories.
+        
+        If an input directory contains subdirectories with info.txt or readme files,
+        treat those subdirectories as individual mods. Otherwise, use the input directory.
+        """
+        mod_dirs = []
+        for dir_path in directories:
+            if not dir_path.exists() or not dir_path.is_dir():
+                continue
+            
+            # Check if this directory has mod files (info.txt, readme, or lua files)
+            has_mod_files = any(
+                (dir_path / f).exists() for f in ['info.txt'] + 
+                [p.name for p in dir_path.iterdir() if p.is_file() and p.name.lower().startswith('readme')]
+            ) or any(
+                self.should_scan_file(f) for f in dir_path.rglob('*') if f.is_file()
+            )
+            
+            # Check for subdirectories that look like mods
+            sub_mods = []
+            for sub_dir in dir_path.iterdir():
+                if sub_dir.is_dir():
+                    has_sub_mod_files = any(
+                        (sub_dir / f).exists() for f in ['info.txt'] + 
+                        [p.name for p in sub_dir.iterdir() if p.is_file() and p.name.lower().startswith('readme')]
+                    ) or any(
+                        self.should_scan_file(f) for f in sub_dir.rglob('*') if f.is_file()
+                    )
+                    if has_sub_mod_files:
+                        sub_mods.append(sub_dir)
+            
+            if sub_mods:
+                # If there are subdirectories that look like mods, use them
+                mod_dirs.extend(sub_mods)
+                self.logger.info(f"Found {len(sub_mods)} mod subdirectories in {dir_path}")
+            elif has_mod_files:
+                # Otherwise, use the directory itself
+                mod_dirs.append(dir_path)
+            else:
+                self.logger.warning(f"No mod files found in {dir_path}")
+        
+        return mod_dirs
+
     def scan_directories(self, directories: List[Path], dry_run: bool = False) -> Dict:
         """Scan multiple directories for keybinds."""
+        # Collect actual mod directories
+        mod_dirs = self.collect_mod_directories(directories)
+        
         all_results = []
         mod_info = {}
 
-        for dir_path in directories:
+        for dir_path in mod_dirs:
             if not dir_path.exists() or not dir_path.is_dir():
                 self.logger.warning(f"Directory does not exist: {dir_path}")
                 continue

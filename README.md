@@ -7,7 +7,7 @@ A tool to detect keybinds used in Teardown game mods by scanning Lua scripts and
 - Recursively scans directories for Teardown mod files
 - Supports configurable regex patterns for keybind detection
 - Outputs results in JSON and/or CSV format
-- Extracts mod names from `info.txt` files
+- Extracts mod names from `info.txt` files (`name:` or `name =` fields) or `readme*` files (first header or line)
 - Aggregates duplicate keybinds
 - Configurable file size limits and encoding
 - Dry-run mode for testing
@@ -49,7 +49,7 @@ The GUI provides an intuitive interface for:
 
 ### Arguments (CLI)
 
-- `DIRECTORY`: One or more directories to scan recursively
+- `DIRECTORY`: One or more directories to scan. If a directory contains subdirectories with mod files (info.txt, readme, or Lua files), each subdirectory will be treated as a separate mod and scanned individually. Otherwise, the directory itself is scanned as a single mod.
 
 ### Options (CLI)
 

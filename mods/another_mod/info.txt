@@ -1,0 +1,4 @@
+name = Another Test Mod
+description: Another sample mod for testing
+author: Test Author
+version: 2.0
