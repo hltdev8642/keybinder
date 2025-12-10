@@ -204,6 +204,10 @@ class KeybindScannerGUI:
         # Setup logging to GUI
         self.setup_logging()
 
+    def clear_log(self):
+        """Clear the log text area."""
+        self.log_text.delete(1.0, tk.END)
+
     def setup_logging(self):
         class GUITextHandler(logging.Handler):
             def __init__(self, text_widget):
@@ -338,8 +342,42 @@ class KeybindScannerGUI:
             self.view_button.config(state='normal')
             self.map_button.config(state='normal')
 
-    def clear_log(self):
-        self.log_text.delete(1.0, tk.END)
+    def get_column_autocomplete_values(self):
+        """Get unique values for each column for autocomplete functionality."""
+        if not self.scan_data or 'aggregated' not in self.scan_data:
+            return {}
+
+        # Initialize sets for unique values
+        keys = set()
+        mod_names = set()
+        statuses = set()
+        files = set()
+        lines = set()
+        contexts = set()
+
+        # Collect unique values from all bindings
+        for key, bindings in self.scan_data['aggregated'].items():
+            keys.add(key)
+            for binding in bindings:
+                mod_names.add(binding.get('mod_name', 'Unknown'))
+                mod_enabled = binding.get('mod_enabled', True)
+                statuses.add("Enabled" if mod_enabled else "Disabled")
+                files.add(binding['file_path'])
+                lines.add(str(binding['line_number']))
+                # Truncate context for autocomplete (first 50 chars should be enough for uniqueness)
+                context = binding['context'][:50].strip()
+                if context:
+                    contexts.add(context)
+
+        # Return sorted lists
+        return {
+            "Key": sorted(list(keys)),
+            "Mod Name": sorted(list(mod_names)),
+            "Status": sorted(list(statuses)),
+            "File": sorted(list(files)),
+            "Line": sorted(list(lines)),
+            "Context": sorted(list(contexts))
+        }
 
     def view_keybindings(self):
         """Open keybinding viewer window."""
@@ -368,21 +406,26 @@ class KeybindScannerGUI:
         self.line_filter = tk.StringVar()
         self.context_filter = tk.StringVar()
 
-        # Create filter entries
+        # Get autocomplete values for each column
+        autocomplete_values = self.get_column_autocomplete_values()
+
+        # Create filter comboboxes with autocomplete
         filters = [
-            ("Key:", self.key_filter),
-            ("Mod Name:", self.mod_filter),
-            ("Status:", self.status_filter),
-            ("File:", self.file_filter),
-            ("Line:", self.line_filter),
-            ("Context:", self.context_filter)
+            ("Key:", self.key_filter, autocomplete_values.get("Key", [])),
+            ("Mod Name:", self.mod_filter, autocomplete_values.get("Mod Name", [])),
+            ("Status:", self.status_filter, autocomplete_values.get("Status", [])),
+            ("File:", self.file_filter, autocomplete_values.get("File", [])),
+            ("Line:", self.line_filter, autocomplete_values.get("Line", [])),
+            ("Context:", self.context_filter, autocomplete_values.get("Context", []))
         ]
 
-        for i, (label_text, var) in enumerate(filters):
+        for i, (label_text, var, values) in enumerate(filters):
             ttk.Label(filter_frame, text=label_text).grid(row=0, column=i*2, sticky=tk.W, padx=(0, 5))
-            entry = ttk.Entry(filter_frame, textvariable=var, width=15)
-            entry.grid(row=0, column=i*2+1, sticky=(tk.W, tk.E), padx=(0, 10))
-            entry.bind('<KeyRelease>', lambda e: self.apply_column_filters())
+            combobox = ttk.Combobox(filter_frame, textvariable=var, values=values, width=15)
+            combobox.grid(row=0, column=i*2+1, sticky=(tk.W, tk.E), padx=(0, 10))
+            combobox.bind('<KeyRelease>', lambda e: self.apply_column_filters())
+            # Allow typing and filtering
+            combobox.config(state='normal')
 
         # Clear filters button
         ttk.Button(filter_frame, text="Clear All Filters", command=self.clear_column_filters).grid(row=0, column=len(filters)*2, padx=(10, 0))
