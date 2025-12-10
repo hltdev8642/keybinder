@@ -307,14 +307,50 @@ class KeybindScanner:
         }
 
     def aggregate_results(self, results: List[Dict]) -> Dict[str, List[Dict]]:
-        """Aggregate results by keybind."""
-        aggregated = {}
+        """Aggregate results by keybind, deduplicating within each mod."""
+        from collections import defaultdict
+        
+        # Group by mod and keybind to merge multiple occurrences
+        mod_key_groups = defaultdict(list)
         for result in results:
+            mod_key = (result['mod_name'], result['key_name'])
+            mod_key_groups[mod_key].append(result)
+        
+        # Merge information for each mod-keybind pair
+        merged_results = {}
+        for (mod_name, key_name), group_results in mod_key_groups.items():
+            if len(group_results) == 1:
+                # Single occurrence, use as-is
+                merged_results[(mod_name, key_name)] = group_results[0]
+            else:
+                # Multiple occurrences, merge information
+                first_result = group_results[0].copy()
+                
+                # Collect all file paths and line numbers
+                all_files = set()
+                all_lines = set()
+                all_contexts = []
+                
+                for result in group_results:
+                    all_files.add(result['file_path'])
+                    all_lines.add(result['line_number'])
+                    if result['context'] not in all_contexts:
+                        all_contexts.append(result['context'])
+                
+                # Update the result with merged information
+                first_result['file_path'] = '; '.join(sorted(all_files))
+                first_result['line_number'] = '; '.join(str(line) for line in sorted(all_lines))
+                first_result['context'] = ' | '.join(all_contexts[:3])  # Limit to first 3 contexts
+                
+                merged_results[(mod_name, key_name)] = first_result
+        
+        # Now aggregate by keybind
+        aggregated = defaultdict(list)
+        for result in merged_results.values():
             key = result['key_name']
-            if key not in aggregated:
-                aggregated[key] = []
             aggregated[key].append(result)
-        return aggregated
+        
+        return dict(aggregated)
 
     def save_results(self, scan_data: Dict, output_dir: Path, formats: List[str]):
         """Save results in specified formats."""
