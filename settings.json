@@ -11,5 +11,6 @@
   "csv_format": true,
   "max_file_size": 10485760,
   "encoding": "utf-8",
+  "mod_status_xml": "C:/Users/jared/AppData/Local/Teardown/mods.xml",
   "geometry": "1280x729+26+26"
 }

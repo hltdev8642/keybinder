@@ -13,6 +13,7 @@ import mimetypes
 import os
 import re
 import sys
+import xml.etree.ElementTree as ET
 from pathlib import Path
 from typing import Dict, List, Optional, Set, Tuple
 
@@ -59,6 +60,40 @@ class KeybindScanner:
             self.compiled_patterns.append(re.compile(pattern, flags))
 
         self.logger = logging.getLogger(__name__)
+
+    def parse_mod_status_xml(self, xml_path: Path) -> Dict[str, bool]:
+        """Parse Teardown mods XML file to get mod enabled/disabled status.
+        
+        Args:
+            xml_path: Path to the mods.xml file
+            
+        Returns:
+            Dictionary mapping mod directory names to enabled status (True/False)
+        """
+        mod_status = {}
+        try:
+            tree = ET.parse(xml_path)
+            root = tree.getroot()
+            
+            for mod_elem in root.findall('mod'):
+                mod_id = mod_elem.get('id')
+                active = mod_elem.get('active', 'false').lower() == 'true'
+                
+                if mod_id:
+                    # Extract mod directory name from id
+                    # Remove prefix (steam- or local-) by splitting on first '-' and taking the rest
+                    parts = mod_id.split('-', 1)
+                    if len(parts) > 1:
+                        mod_dir_name = parts[1]
+                        mod_status[mod_dir_name] = active
+                        self.logger.debug(f"Parsed mod status: {mod_dir_name} -> {'enabled' if active else 'disabled'}")
+                    else:
+                        self.logger.warning(f"Invalid mod id format: {mod_id}")
+                        
+        except Exception as e:
+            self.logger.error(f"Error parsing mod status XML {xml_path}: {e}")
+            
+        return mod_status
 
     def is_text_file(self, file_path: Path) -> bool:
         """Check if file is likely a text file."""
@@ -213,10 +248,16 @@ class KeybindScanner:
         
         return mod_dirs
 
-    def scan_directories(self, directories: List[Path], dry_run: bool = False) -> Dict:
+    def scan_directories(self, directories: List[Path], dry_run: bool = False, mod_status_xml: Optional[Path] = None) -> Dict:
         """Scan multiple directories for keybinds."""
         # Collect actual mod directories
         mod_dirs = self.collect_mod_directories(directories)
+        
+        # Parse mod status XML if provided
+        mod_status = {}
+        if mod_status_xml and mod_status_xml.exists():
+            mod_status = self.parse_mod_status_xml(mod_status_xml)
+            self.logger.info(f"Loaded status for {len(mod_status)} mods from {mod_status_xml}")
         
         all_results = []
         mod_info = {}
@@ -228,7 +269,15 @@ class KeybindScanner:
 
             self.logger.info(f"Scanning directory: {dir_path}")
             mod_name = self.extract_mod_name(dir_path)
-            mod_info[str(dir_path)] = mod_name
+            
+            # Get mod status from XML (default to enabled if not found)
+            mod_dir_name = dir_path.name
+            is_enabled = mod_status.get(mod_dir_name, True)  # Default to True if not in XML
+            
+            mod_info[str(dir_path)] = {
+                'name': mod_name,
+                'enabled': is_enabled
+            }
 
             if dry_run:
                 continue
@@ -243,6 +292,7 @@ class KeybindScanner:
                         results = self.scan_file(file_path)
                         for result in results:
                             result['mod_name'] = mod_name
+                            result['mod_enabled'] = is_enabled
                         all_results.extend(results)
 
         # Aggregate duplicates
@@ -301,6 +351,7 @@ def main():
     parser.add_argument('-d', '--dry-run', action='store_true', help='Dry run mode')
     parser.add_argument('-v', '--verbose', action='store_true', help='Verbose logging')
     parser.add_argument('-l', '--log-file', help='Log file path')
+    parser.add_argument('-x', '--mod-status-xml', help='Path to Teardown mods.xml file for mod enabled/disabled status')
 
     args = parser.parse_args()
 
@@ -317,6 +368,7 @@ def main():
 
     # Convert directory strings to Paths
     directories = [Path(d) for d in args.directories]
+    mod_status_xml = Path(args.mod_status_xml) if args.mod_status_xml else None
 
     # Create scanner
     scanner = KeybindScanner(
@@ -329,7 +381,7 @@ def main():
     )
 
     # Scan directories
-    scan_data = scanner.scan_directories(directories, dry_run=args.dry_run)
+    scan_data = scanner.scan_directories(directories, dry_run=args.dry_run, mod_status_xml=mod_status_xml)
 
     # Save results
     if not args.dry_run:

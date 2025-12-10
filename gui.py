@@ -37,6 +37,7 @@ class KeybindScannerGUI:
         self.csv_format = tk.BooleanVar()
         self.max_file_size = tk.IntVar(value=10*1024*1024)
         self.encoding = tk.StringVar(value="utf-8")
+        self.mod_status_xml = tk.StringVar()
 
         # Load settings
         self.load_settings()
@@ -66,6 +67,7 @@ class KeybindScannerGUI:
                 self.csv_format.set(settings.get('csv_format', False))
                 self.max_file_size.set(settings.get('max_file_size', 10*1024*1024))
                 self.encoding.set(settings.get('encoding', 'utf-8'))
+                self.mod_status_xml.set(settings.get('mod_status_xml', ''))
                 
                 # Window geometry
                 geometry = settings.get('geometry')
@@ -87,6 +89,7 @@ class KeybindScannerGUI:
                 'csv_format': self.csv_format.get(),
                 'max_file_size': self.max_file_size.get(),
                 'encoding': self.encoding.get(),
+                'mod_status_xml': self.mod_status_xml.get(),
                 'geometry': self.root.geometry()
             }
             
@@ -150,8 +153,12 @@ class KeybindScannerGUI:
         ttk.Entry(output_frame, textvariable=self.output_dir).grid(row=1, column=0, sticky=(tk.W, tk.E))
         ttk.Button(output_frame, text="Browse", command=self.browse_output_dir).grid(row=1, column=1, padx=(5, 0))
 
+        ttk.Label(output_frame, text="Mod Status XML:").grid(row=2, column=0, sticky=tk.W, pady=(10, 0))
+        ttk.Entry(output_frame, textvariable=self.mod_status_xml).grid(row=3, column=0, sticky=(tk.W, tk.E))
+        ttk.Button(output_frame, text="Browse XML", command=self.browse_mod_status_xml).grid(row=3, column=1, padx=(5, 0))
+
         format_frame = ttk.Frame(output_frame)
-        format_frame.grid(row=2, column=0, columnspan=2, sticky=tk.W, pady=(10, 0))
+        format_frame.grid(row=4, column=0, columnspan=2, sticky=tk.W, pady=(10, 0))
 
         ttk.Checkbutton(format_frame, text="JSON", variable=self.json_format).grid(row=0, column=0)
         ttk.Checkbutton(format_frame, text="CSV", variable=self.csv_format).grid(row=0, column=1, padx=(10, 0))
@@ -236,6 +243,14 @@ class KeybindScannerGUI:
         if dir_path:
             self.output_dir.set(dir_path)
 
+    def browse_mod_status_xml(self):
+        file_path = filedialog.askopenfilename(
+            title="Select Teardown Mod Status XML File",
+            filetypes=[("XML files", "*.xml"), ("All files", "*.*")]
+        )
+        if file_path:
+            self.mod_status_xml.set(file_path)
+
     def run_scan(self):
         if not self.directories:
             messagebox.showerror("Error", "Please select at least one directory to scan.")
@@ -277,9 +292,10 @@ class KeybindScannerGUI:
         try:
             # Convert string paths to Path objects
             directories = [Path(d) for d in self.directories]
+            mod_status_xml = Path(self.mod_status_xml.get()) if self.mod_status_xml.get() else None
 
             # Run scan
-            scan_data = self.scanner.scan_directories(directories)
+            scan_data = self.scanner.scan_directories(directories, mod_status_xml=mod_status_xml)
 
             # Save results
             output_dir = Path(self.output_dir.get())
@@ -341,18 +357,20 @@ class KeybindScannerGUI:
         tree_frame.grid(row=0, column=0, sticky=(tk.W, tk.E, tk.N, tk.S))
 
         # Treeview with columns
-        columns = ("Key", "Mod", "File", "Line", "Context")
+        columns = ("Key", "Mod", "Status", "File", "Line", "Context")
         tree = ttk.Treeview(tree_frame, columns=columns, show="headings", height=20)
         
         # Configure columns
         tree.heading("Key", text="Key")
         tree.heading("Mod", text="Mod Name")
+        tree.heading("Status", text="Status")
         tree.heading("File", text="File")
         tree.heading("Line", text="Line")
         tree.heading("Context", text="Context")
         
         tree.column("Key", width=80, minwidth=60)
         tree.column("Mod", width=150, minwidth=100)
+        tree.column("Status", width=70, minwidth=60)
         tree.column("File", width=200, minwidth=150)
         tree.column("Line", width=60, minwidth=50)
         tree.column("Context", width=300, minwidth=200)
@@ -406,7 +424,7 @@ class KeybindScannerGUI:
                 conflict_count += 1
             
             # Insert parent item for the key
-            parent_item = tree.insert("", tk.END, values=(key, f"{len(bindings)} mods", "", "", ""))
+            parent_item = tree.insert("", tk.END, values=(key, f"{len(bindings)} mods", "", "", "", ""))
             
             # Color code conflicts
             if len(bindings) > 1:
@@ -415,11 +433,13 @@ class KeybindScannerGUI:
             # Insert child items for each binding
             for binding in bindings:
                 mod_name = binding.get('mod_name', 'Unknown')
+                mod_enabled = binding.get('mod_enabled', True)
+                status = "Enabled" if mod_enabled else "Disabled"
                 file_path = binding['file_path']
                 line_num = binding['line_number']
                 context = binding['context'][:100]  # Truncate long contexts
                 
-                tree.insert(parent_item, tk.END, values=("", mod_name, file_path, line_num, context))
+                tree.insert(parent_item, tk.END, values=("", mod_name, status, file_path, line_num, context))
 
         # Configure tags for conflict highlighting
         tree.tag_configure("conflict", background="lightcoral")
@@ -437,12 +457,69 @@ class KeybindScannerGUI:
         # Create map window
         map_win = tk.Toplevel(self.root)
         map_win.title("Keybinding Relationship Map")
-        map_win.geometry("1200x800")
+        map_win.geometry("1400x900")
+
+        # Store filter state
+        self.map_filters = {}
+        self.map_search_var = tk.StringVar()
+        
+        # Create main container with paned window
+        paned = ttk.PanedWindow(map_win, orient=tk.HORIZONTAL)
+        paned.grid(row=0, column=0, sticky=(tk.W, tk.E, tk.N, tk.S))
+
+        # Filter panel (left side)
+        filter_frame = ttk.Frame(paned, padding="10")
+        paned.add(filter_frame, weight=1)
+
+        # Search box
+        search_frame = ttk.Frame(filter_frame)
+        search_frame.grid(row=0, column=0, sticky=(tk.W, tk.E), pady=(0, 10))
+        
+        ttk.Label(search_frame, text="Search Keys:").grid(row=0, column=0, sticky=tk.W)
+        search_entry = ttk.Entry(search_frame, textvariable=self.map_search_var)
+        search_entry.grid(row=0, column=1, sticky=(tk.W, tk.E), padx=(5, 0))
+        search_entry.bind('<KeyRelease>', lambda e: self.update_key_filters())
+
+        # Key filter checkboxes
+        key_filter_frame = ttk.LabelFrame(filter_frame, text="Show/Hide Keys", padding="5")
+        key_filter_frame.grid(row=1, column=0, sticky=(tk.W, tk.E, tk.N, tk.S), pady=(0, 10))
+
+        # Scrollable frame for checkboxes
+        key_canvas = tk.Canvas(key_filter_frame, height=400)
+        key_scrollbar = ttk.Scrollbar(key_filter_frame, orient=tk.VERTICAL, command=key_canvas.yview)
+        key_scrollable_frame = ttk.Frame(key_canvas)
+
+        key_scrollable_frame.bind(
+            "<Configure>",
+            lambda e: key_canvas.configure(scrollregion=key_canvas.bbox("all"))
+        )
+
+        key_canvas.create_window((0, 0), window=key_scrollable_frame, anchor="nw")
+        key_canvas.configure(yscrollcommand=key_scrollbar.set)
+
+        key_canvas.grid(row=0, column=0, sticky=(tk.W, tk.E, tk.N, tk.S))
+        key_scrollbar.grid(row=0, column=1, sticky=(tk.N, tk.S))
+
+        # Select/Deselect all buttons
+        button_frame = ttk.Frame(filter_frame)
+        button_frame.grid(row=2, column=0, sticky=(tk.W, tk.E), pady=(0, 10))
+        
+        ttk.Button(button_frame, text="Select All", command=self.select_all_keys).grid(row=0, column=0, padx=(0, 5))
+        ttk.Button(button_frame, text="Deselect All", command=self.deselect_all_keys).grid(row=0, column=1, padx=(0, 5))
+        ttk.Button(button_frame, text="Show Conflicts Only", command=self.show_conflicts_only).grid(row=0, column=2)
+
+        # Statistics frame
+        stats_frame = ttk.LabelFrame(filter_frame, text="Statistics", padding="5")
+        stats_frame.grid(row=3, column=0, sticky=(tk.W, tk.E))
+
+        self.stats_label = ttk.Label(stats_frame, text="")
+        self.stats_label.grid(row=0, column=0, sticky=tk.W)
+
+        # Canvas panel (right side)
+        canvas_frame = ttk.Frame(paned, padding="10")
+        paned.add(canvas_frame, weight=3)
 
         # Create canvas with scrollbars
-        canvas_frame = ttk.Frame(map_win, padding="10")
-        canvas_frame.grid(row=0, column=0, sticky=(tk.W, tk.E, tk.N, tk.S))
-
         h_scrollbar = ttk.Scrollbar(canvas_frame, orient=tk.HORIZONTAL)
         v_scrollbar = ttk.Scrollbar(canvas_frame, orient=tk.VERTICAL)
         canvas = tk.Canvas(canvas_frame, bg='white', 
@@ -458,8 +535,8 @@ class KeybindScannerGUI:
         v_scrollbar.grid(row=0, column=1, sticky=(tk.N, tk.S))
 
         # Control frame
-        control_frame = ttk.Frame(map_win, padding="5")
-        control_frame.grid(row=1, column=0, sticky=(tk.W, tk.E))
+        control_frame = ttk.Frame(canvas_frame, padding="5")
+        control_frame.grid(row=2, column=0, columnspan=2, sticky=(tk.W, tk.E))
 
         ttk.Label(control_frame, text="Zoom:").grid(row=0, column=0)
         zoom_var = tk.DoubleVar(value=1.0)
@@ -473,12 +550,91 @@ class KeybindScannerGUI:
         # Configure grid weights
         map_win.columnconfigure(0, weight=1)
         map_win.rowconfigure(0, weight=1)
+        filter_frame.columnconfigure(0, weight=1)
+        filter_frame.rowconfigure(1, weight=1)
+        key_filter_frame.columnconfigure(0, weight=1)
+        key_filter_frame.rowconfigure(0, weight=1)
         canvas_frame.columnconfigure(0, weight=1)
         canvas_frame.rowconfigure(0, weight=1)
         control_frame.columnconfigure(4, weight=1)
 
-        # Draw the binding map
+        # Initialize key filters
+        self.initialize_key_filters(key_scrollable_frame)
+        
+        # Draw initial map
         self.draw_binding_map(canvas, zoom_var.get())
+
+    def initialize_key_filters(self, parent_frame):
+        """Initialize checkboxes for key filtering."""
+        if not self.scan_data or 'aggregated' not in self.scan_data:
+            return
+
+        # Clear existing filters
+        self.map_filters.clear()
+        
+        # Create checkboxes for each key
+        row = 0
+        for key in sorted(self.scan_data['aggregated'].keys()):
+            var = tk.BooleanVar(value=True)  # Default to showing all
+            self.map_filters[key] = var
+            
+            # Count mods for this key
+            mod_count = len(self.scan_data['aggregated'][key])
+            conflict_indicator = " ⚠️" if mod_count > 1 else ""
+            
+            cb = ttk.Checkbutton(parent_frame, text=f"{key} ({mod_count} mods){conflict_indicator}", 
+                               variable=var, command=self.update_map_display)
+            cb.grid(row=row, column=0, sticky=tk.W, pady=1)
+            row += 1
+
+    def update_key_filters(self):
+        """Update key filter visibility based on search."""
+        search_text = self.map_search_var.get().lower()
+        
+        # This would require accessing the checkboxes, but for now we'll just trigger a redraw
+        # In a more complete implementation, we'd show/hide checkboxes based on search
+        self.update_map_display()
+
+    def select_all_keys(self):
+        """Select all key filters."""
+        for var in self.map_filters.values():
+            var.set(True)
+        self.update_map_display()
+
+    def deselect_all_keys(self):
+        """Deselect all key filters."""
+        for var in self.map_filters.values():
+            var.set(False)
+        self.update_map_display()
+
+    def show_conflicts_only(self):
+        """Show only keys that have conflicts (multiple mods)."""
+        if not self.scan_data or 'aggregated' not in self.scan_data:
+            return
+            
+        for key, var in self.map_filters.items():
+            mod_count = len(self.scan_data['aggregated'][key])
+            var.set(mod_count > 1)
+        self.update_map_display()
+
+    def update_map_display(self):
+        """Update the map display when filters change."""
+        # Find the canvas in the current map window
+        # This is a bit hacky, but works for our purposes
+        for widget in self.root.winfo_children():
+            if isinstance(widget, tk.Toplevel) and widget.title() == "Keybinding Relationship Map":
+                # Find canvas in this window
+                for child in widget.winfo_children():
+                    if isinstance(child, ttk.PanedWindow):
+                        for pane in child.winfo_children():
+                            if isinstance(pane, ttk.Frame):
+                                for subchild in pane.winfo_children():
+                                    if isinstance(subchild, tk.Canvas) and subchild.cget('bg') == 'white':
+                                        # Found the canvas, redraw it
+                                        zoom = 1.0  # Could store this if needed
+                                        self.draw_binding_map(subchild, zoom)
+                                        break
+                break
 
     def draw_binding_map(self, canvas, zoom=1.0):
         """Draw the keybinding relationship map on canvas."""
@@ -488,15 +644,27 @@ class KeybindScannerGUI:
             canvas.create_text(400, 300, text="No keybinding data available", font=("Arial", 16))
             return
 
+        # Filter keys based on user selection
+        filtered_keys = []
+        for key in self.scan_data['aggregated'].keys():
+            if key in self.map_filters and self.map_filters[key].get():
+                filtered_keys.append(key)
+        
+        # Apply search filter
+        search_text = self.map_search_var.get().lower()
+        if search_text:
+            filtered_keys = [key for key in filtered_keys if search_text in key.lower()]
+
         # Prepare data structures
-        keys = list(self.scan_data['aggregated'].keys())
+        keys = filtered_keys
         mods = set()
         files = set()
         
         key_mods = {}  # key -> set of mods
         mod_files = {}  # mod -> set of files
         
-        for key, bindings in self.scan_data['aggregated'].items():
+        for key in keys:
+            bindings = self.scan_data['aggregated'][key]
             key_mods[key] = set()
             for binding in bindings:
                 mod_name = binding.get('mod_name', 'Unknown')
@@ -511,6 +679,22 @@ class KeybindScannerGUI:
         # Convert to lists for positioning
         mods = sorted(list(mods))
         files = sorted(list(files))
+
+        # Update statistics
+        total_keys = len(self.scan_data['aggregated'])
+        visible_keys = len(keys)
+        conflict_count = sum(1 for key in keys if len(key_mods[key]) > 1)
+        total_mods = len(mods)
+        total_files = len(files)
+        
+        if hasattr(self, 'stats_label'):
+            self.stats_label.config(text=f"Keys: {visible_keys}/{total_keys} visible\nConflicts: {conflict_count}\nMods: {total_mods}\nFiles: {total_files}")
+
+        # If no keys to display, show message
+        if not keys:
+            canvas.create_text(400, 300, text="No keys selected for display.\nUse the filter panel to select keys.", 
+                             font=("Arial", 14), justify=tk.CENTER)
+            return
 
         # Layout parameters
         margin = 50
@@ -565,6 +749,8 @@ class KeybindScannerGUI:
 
         # Draw connections
         for key, key_mods_set in key_mods.items():
+            if key not in key_positions:
+                continue
             key_x, key_y = key_positions[key]
             for mod in key_mods_set:
                 if mod in mod_positions:

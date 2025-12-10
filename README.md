@@ -8,6 +8,7 @@ A tool to detect keybinds used in Teardown game mods by scanning Lua scripts and
 - Supports configurable regex patterns for keybind detection
 - Outputs results in JSON and/or CSV format
 - Extracts mod names from `info.txt` files (`name:` or `name =` fields) or `readme*` files (first header or line)
+- **Mod Status Detection**: Parses Teardown's `mods.xml` file to determine if mods are enabled or disabled
 - Aggregates duplicate keybinds
 - Configurable file size limits and encoding
 - Dry-run mode for testing
@@ -42,9 +43,10 @@ The GUI provides an intuitive interface for:
 - Selecting directories to scan
 - Configuring scan options
 - Choosing output formats and location
+- **Selecting Teardown mods.xml file** for mod enabled/disabled status detection
 - Running scans with progress indication
 - Viewing logs and results
-- **Visualizing keybinding conflicts**: After scanning, use "View Keybindings" to see a detailed tree view of all detected keybinds, with conflict highlighting for keys used by multiple mods
+- **Visualizing keybinding conflicts**: After scanning, use "View Keybindings" to see a detailed tree view of all detected keybinds, with conflict highlighting for keys used by multiple mods and mod enabled/disabled status
 - **Interactive binding map**: Use "View Binding Map" for a mindmap-style visualization showing relationships between keys, mods, and files with zoom and pan controls
 
 **Persistent Settings**: The GUI remembers your last used directories, output settings, and window position between sessions.
@@ -70,6 +72,7 @@ The GUI provides an intuitive interface for:
 - `-d, --dry-run`: Dry run mode (no actual scanning)
 - `-v, --verbose`: Verbose logging
 - `-l, --log-file LOG_FILE`: Log file path
+- `-x, --mod-status-xml XML_FILE`: Path to Teardown mods.xml file for mod enabled/disabled status
 
 ## Default Regex Patterns
 
@@ -102,7 +105,8 @@ Only files matching these patterns are scanned (case-insensitive):
       "key_name": "Key_X",
       "context": "if InputPressed(\"Key_X\") then",
       "matched_text": "InputPressed(\"Key_X\")",
-      "mod_name": "Sample Mod"
+      "mod_name": "Sample Mod",
+      "mod_enabled": true
     }
   ],
   "aggregated": {
@@ -113,12 +117,16 @@ Only files matching these patterns are scanned (case-insensitive):
         "key_name": "Key_X",
         "context": "if InputPressed(\"Key_X\") then",
         "matched_text": "InputPressed(\"Key_X\")",
-        "mod_name": "Sample Mod"
+        "mod_name": "Sample Mod",
+        "mod_enabled": true
       }
     ]
   },
   "mod_info": {
-    "/path/to/mod": "Sample Mod"
+    "/path/to/mod": {
+      "name": "Sample Mod",
+      "enabled": true
+    }
   },
   "total_files_scanned": 3,
   "total_matches": 5
@@ -127,7 +135,7 @@ Only files matching these patterns are scanned (case-insensitive):
 
 ### CSV Output
 
-Columns: file_path, line_number, key_name, context, matched_text, mod_name
+Columns: file_path, line_number, key_name, context, matched_text, mod_name, mod_enabled
 
 ## Examples
 
