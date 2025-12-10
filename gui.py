@@ -561,14 +561,14 @@ class KeybindScannerGUI:
             total_bindings += len(bindings)
             filtered_bindings += len(filtered_key_bindings)
             
-            if len(bindings) > 1:
+            if len(filtered_key_bindings) > 1:
                 conflict_count += 1
             
             # Insert parent item for the key
             parent_item = tree.insert("", tk.END, values=(key, f"{len(filtered_key_bindings)} mods", "", "", "", ""))
             
             # Color code conflicts
-            if len(bindings) > 1:
+            if len(filtered_key_bindings) > 1:
                 tree.item(parent_item, tags=("conflict",))
             
             # Insert child items for each filtered binding
@@ -587,7 +587,8 @@ class KeybindScannerGUI:
 
         # Update status
         total_unique_keys = len(aggregated)
-        visible_keys = len([k for k in aggregated.keys() if any(
+        # Count visible keys (keys that have at least one filtered binding)
+        visible_keys = sum(1 for k in aggregated.keys() if any(
             (not key_filter or key_filter in k.lower()) and
             any(
                 (not mod_filter or mod_filter in binding.get('mod_name', 'Unknown').lower()) and
@@ -598,7 +599,7 @@ class KeybindScannerGUI:
                 for binding in aggregated[k]
             )
             for k in [k]  # Just to make it a single-item list for the any() check
-        )])
+        ))
         
         status_text = f"Total unique keys: {total_unique_keys} | Visible keys: {visible_keys} | Conflicts: {conflict_count} | Filtered bindings: {filtered_bindings}"
         status_label.config(text=status_text)
