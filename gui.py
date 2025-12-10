@@ -166,7 +166,10 @@ class KeybindScannerGUI:
         self.view_button = ttk.Button(button_frame, text="View Keybindings", command=self.view_keybindings, state='disabled')
         self.view_button.grid(row=0, column=1, padx=(0, 10))
 
-        ttk.Button(button_frame, text="Clear Log", command=self.clear_log).grid(row=0, column=2)
+        self.map_button = ttk.Button(button_frame, text="View Binding Map", command=self.view_binding_map, state='disabled')
+        self.map_button.grid(row=0, column=2, padx=(0, 10))
+
+        ttk.Button(button_frame, text="Clear Log", command=self.clear_log).grid(row=0, column=3)
 
         # Progress bar
         self.progress = ttk.Progressbar(main_frame, orient="horizontal", mode="indeterminate")
@@ -314,9 +317,10 @@ class KeybindScannerGUI:
         self.run_button.config(state='normal')
         self.progress.stop()
         
-        # Enable view button if we have scan data
+        # Enable view buttons if we have scan data
         if self.scan_data:
             self.view_button.config(state='normal')
+            self.map_button.config(state='normal')
 
     def clear_log(self):
         self.log_text.delete(1.0, tk.END)
@@ -423,6 +427,194 @@ class KeybindScannerGUI:
         # Update status
         status_text = f"Total unique keys: {len(aggregated)} | Conflicts: {conflict_count} | Total bindings: {total_bindings}"
         status_label.config(text=status_text)
+
+    def view_binding_map(self):
+        """Open binding map visualization window."""
+        if not self.scan_data:
+            messagebox.showerror("Error", "No scan data available. Please run a scan first.")
+            return
+
+        # Create map window
+        map_win = tk.Toplevel(self.root)
+        map_win.title("Keybinding Relationship Map")
+        map_win.geometry("1200x800")
+
+        # Create canvas with scrollbars
+        canvas_frame = ttk.Frame(map_win, padding="10")
+        canvas_frame.grid(row=0, column=0, sticky=(tk.W, tk.E, tk.N, tk.S))
+
+        h_scrollbar = ttk.Scrollbar(canvas_frame, orient=tk.HORIZONTAL)
+        v_scrollbar = ttk.Scrollbar(canvas_frame, orient=tk.VERTICAL)
+        canvas = tk.Canvas(canvas_frame, bg='white', 
+                          xscrollcommand=h_scrollbar.set,
+                          yscrollcommand=v_scrollbar.set,
+                          scrollregion=(0, 0, 2000, 1500))
+        
+        h_scrollbar.config(command=canvas.xview)
+        v_scrollbar.config(command=canvas.yview)
+
+        canvas.grid(row=0, column=0, sticky=(tk.W, tk.E, tk.N, tk.S))
+        h_scrollbar.grid(row=1, column=0, sticky=(tk.W, tk.E))
+        v_scrollbar.grid(row=0, column=1, sticky=(tk.N, tk.S))
+
+        # Control frame
+        control_frame = ttk.Frame(map_win, padding="5")
+        control_frame.grid(row=1, column=0, sticky=(tk.W, tk.E))
+
+        ttk.Label(control_frame, text="Zoom:").grid(row=0, column=0)
+        zoom_var = tk.DoubleVar(value=1.0)
+        zoom_scale = ttk.Scale(control_frame, from_=0.5, to=2.0, variable=zoom_var, 
+                              command=lambda v: self.update_canvas_zoom(canvas, float(v)))
+        zoom_scale.grid(row=0, column=1, padx=(5, 10))
+
+        ttk.Button(control_frame, text="Reset View", command=lambda: self.reset_canvas_view(canvas)).grid(row=0, column=2, padx=(0, 10))
+        ttk.Button(control_frame, text="Save Image", command=lambda: self.save_canvas_image(canvas)).grid(row=0, column=3)
+
+        # Configure grid weights
+        map_win.columnconfigure(0, weight=1)
+        map_win.rowconfigure(0, weight=1)
+        canvas_frame.columnconfigure(0, weight=1)
+        canvas_frame.rowconfigure(0, weight=1)
+        control_frame.columnconfigure(4, weight=1)
+
+        # Draw the binding map
+        self.draw_binding_map(canvas, zoom_var.get())
+
+    def draw_binding_map(self, canvas, zoom=1.0):
+        """Draw the keybinding relationship map on canvas."""
+        canvas.delete("all")  # Clear canvas
+        
+        if not self.scan_data or 'aggregated' not in self.scan_data:
+            canvas.create_text(400, 300, text="No keybinding data available", font=("Arial", 16))
+            return
+
+        # Prepare data structures
+        keys = list(self.scan_data['aggregated'].keys())
+        mods = set()
+        files = set()
+        
+        key_mods = {}  # key -> set of mods
+        mod_files = {}  # mod -> set of files
+        
+        for key, bindings in self.scan_data['aggregated'].items():
+            key_mods[key] = set()
+            for binding in bindings:
+                mod_name = binding.get('mod_name', 'Unknown')
+                file_path = binding['file_path']
+                mods.add(mod_name)
+                files.add(file_path)
+                key_mods[key].add(mod_name)
+                if mod_name not in mod_files:
+                    mod_files[mod_name] = set()
+                mod_files[mod_name].add(file_path)
+
+        # Convert to lists for positioning
+        mods = sorted(list(mods))
+        files = sorted(list(files))
+
+        # Layout parameters
+        margin = 50
+        key_spacing = 120 * zoom
+        mod_spacing = 100 * zoom
+        file_spacing = 80 * zoom
+        section_spacing = 300 * zoom
+
+        # Position nodes
+        key_positions = {}
+        mod_positions = {}
+        file_positions = {}
+
+        # Keys on the left
+        for i, key in enumerate(keys):
+            x = margin
+            y = margin + i * key_spacing
+            key_positions[key] = (x, y)
+            # Draw key node (circle)
+            radius = 25 * zoom
+            canvas.create_oval(x-radius, y-radius, x+radius, y+radius, 
+                             fill='lightblue', outline='blue', width=2)
+            canvas.create_text(x, y, text=key, font=("Arial", int(10*zoom), "bold"))
+
+        # Mods in the middle
+        mod_x = margin + section_spacing
+        for i, mod in enumerate(mods):
+            x = mod_x
+            y = margin + i * mod_spacing
+            mod_positions[mod] = (x, y)
+            # Draw mod node (rectangle)
+            width, height = 80 * zoom, 30 * zoom
+            canvas.create_rectangle(x-width/2, y-height/2, x+width/2, y+height/2,
+                                  fill='lightgreen', outline='green', width=2)
+            # Truncate long mod names
+            display_name = mod[:15] + "..." if len(mod) > 15 else mod
+            canvas.create_text(x, y, text=display_name, font=("Arial", int(9*zoom)))
+
+        # Files on the right
+        file_x = mod_x + section_spacing
+        for i, file in enumerate(files):
+            x = file_x
+            y = margin + i * file_spacing
+            file_positions[file] = (x, y)
+            # Draw file node (oval)
+            width, height = 100 * zoom, 25 * zoom
+            canvas.create_oval(x-width/2, y-height/2, x+width/2, y+height/2,
+                             fill='lightyellow', outline='orange', width=2)
+            # Truncate long file paths
+            display_name = Path(file).name  # Just filename
+            canvas.create_text(x, y, text=display_name, font=("Arial", int(8*zoom)))
+
+        # Draw connections
+        for key, key_mods_set in key_mods.items():
+            key_x, key_y = key_positions[key]
+            for mod in key_mods_set:
+                if mod in mod_positions:
+                    mod_x, mod_y = mod_positions[mod]
+                    # Draw line from key to mod
+                    color = 'red' if len(key_mods_set) > 1 else 'gray'
+                    canvas.create_line(key_x + 25*zoom, key_y, mod_x - 40*zoom, mod_y,
+                                     fill=color, width=2, arrow=tk.LAST)
+
+        for mod, mod_files_set in mod_files.items():
+            if mod in mod_positions:
+                mod_x, mod_y = mod_positions[mod]
+                for file in mod_files_set:
+                    if file in file_positions:
+                        file_x, file_y = file_positions[file]
+                        # Draw line from mod to file
+                        canvas.create_line(mod_x + 40*zoom, mod_y, file_x - 50*zoom, file_y,
+                                         fill='purple', width=1, arrow=tk.LAST)
+
+        # Update scroll region
+        canvas.config(scrollregion=canvas.bbox("all"))
+
+        # Add legend
+        legend_x = margin
+        legend_y = margin + len(keys) * key_spacing + 50
+        canvas.create_text(legend_x, legend_y, text="Legend:", font=("Arial", int(12*zoom), "bold"), anchor=tk.W)
+        canvas.create_oval(legend_x+5, legend_y+20, legend_x+25, legend_y+40, fill='lightblue', outline='blue')
+        canvas.create_text(legend_x+35, legend_y+30, text="Keys", font=("Arial", int(10*zoom)), anchor=tk.W)
+        canvas.create_rectangle(legend_x+5, legend_y+50, legend_x+65, legend_y+70, fill='lightgreen', outline='green')
+        canvas.create_text(legend_x+75, legend_y+60, text="Mods", font=("Arial", int(10*zoom)), anchor=tk.W)
+        canvas.create_oval(legend_x+5, legend_y+80, legend_x+85, legend_y+100, fill='lightyellow', outline='orange')
+        canvas.create_text(legend_x+95, legend_y+90, text="Files", font=("Arial", int(10*zoom)), anchor=tk.W)
+        canvas.create_line(legend_x+5, legend_y+115, legend_x+45, legend_y+115, fill='gray', width=2, arrow=tk.LAST)
+        canvas.create_text(legend_x+55, legend_y+115, text="Single mod binding", font=("Arial", int(10*zoom)), anchor=tk.W)
+        canvas.create_line(legend_x+5, legend_y+135, legend_x+45, legend_y+135, fill='red', width=2, arrow=tk.LAST)
+        canvas.create_text(legend_x+55, legend_y+135, text="Conflict binding", font=("Arial", int(10*zoom)), anchor=tk.W)
+
+    def update_canvas_zoom(self, canvas, zoom):
+        """Update canvas zoom level."""
+        self.draw_binding_map(canvas, zoom)
+
+    def reset_canvas_view(self, canvas):
+        """Reset canvas view to top-left."""
+        canvas.xview_moveto(0)
+        canvas.yview_moveto(0)
+
+    def save_canvas_image(self, canvas):
+        """Save canvas as image (placeholder - would need PIL/Pillow)."""
+        messagebox.showinfo("Save Image", "Image saving not implemented yet.\n"
+                                         "Would require PIL/Pillow library for canvas to image conversion.")
 
 
 def main():

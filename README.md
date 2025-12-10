@@ -45,6 +45,7 @@ The GUI provides an intuitive interface for:
 - Running scans with progress indication
 - Viewing logs and results
 - **Visualizing keybinding conflicts**: After scanning, use "View Keybindings" to see a detailed tree view of all detected keybinds, with conflict highlighting for keys used by multiple mods
+- **Interactive binding map**: Use "View Binding Map" for a mindmap-style visualization showing relationships between keys, mods, and files with zoom and pan controls
 
 **Persistent Settings**: The GUI remembers your last used directories, output settings, and window position between sessions.
 
@@ -158,13 +159,24 @@ python test_scanner.py
 
 Sample test data is provided in the `sample_mod/` directory.
 
-## Keybinding Conflict Viewer
+## Keybinding Visualizations
 
-After running a scan in the GUI, click "View Keybindings" to open a visual conflict resolver that shows:
+The GUI provides two visualization modes after scanning:
+
+### Keybinding Conflict Viewer
 
 - **Hierarchical view**: Keys grouped with their associated mods and files
 - **Conflict highlighting**: Keys used by multiple mods are highlighted in red
 - **Detailed information**: Shows mod name, file path, line number, and code context for each binding
 - **Statistics**: Displays total unique keys, number of conflicts, and total bindings
 
-This helps you quickly identify and resolve keybinding conflicts between different Teardown mods.
+### Binding Relationship Map
+
+- **Mindmap-style visualization**: Interactive canvas showing relationships between keys, mods, and files
+- **Node types**: Circular key nodes, rectangular mod nodes, oval file nodes
+- **Connection lines**: Arrows showing which mods use which keys, and which files contain the bindings
+- **Conflict indication**: Red lines for keys used by multiple mods
+- **Interactive controls**: Zoom slider, pan/scroll, reset view
+- **Legend**: Color-coded node and connection explanations
+
+Both views help you quickly identify and resolve keybinding conflicts between different Teardown mods.
