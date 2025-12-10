@@ -25,6 +25,7 @@ class KeybindScannerGUI:
         # Scanner instance
         self.scanner = None
         self.scan_thread = None
+        self.scan_data = None
 
         # UI variables
         self.directories = []
@@ -162,7 +163,10 @@ class KeybindScannerGUI:
         self.run_button = ttk.Button(button_frame, text="Run Scan", command=self.run_scan)
         self.run_button.grid(row=0, column=0, padx=(0, 10))
 
-        ttk.Button(button_frame, text="Clear Log", command=self.clear_log).grid(row=0, column=1)
+        self.view_button = ttk.Button(button_frame, text="View Keybindings", command=self.view_keybindings, state='disabled')
+        self.view_button.grid(row=0, column=1, padx=(0, 10))
+
+        ttk.Button(button_frame, text="Clear Log", command=self.clear_log).grid(row=0, column=2)
 
         # Progress bar
         self.progress = ttk.Progressbar(main_frame, orient="horizontal", mode="indeterminate")
@@ -288,6 +292,8 @@ class KeybindScannerGUI:
             self.root.after(0, self.scan_complete)
 
     def show_results(self, scan_data):
+        self.scan_data = scan_data  # Store for viewing
+        
         summary = f"Scan complete!\n\n"
         summary += f"Files scanned: {scan_data['total_files_scanned']}\n"
         summary += f"Matches found: {scan_data['total_matches']}\n"
@@ -307,9 +313,116 @@ class KeybindScannerGUI:
     def scan_complete(self):
         self.run_button.config(state='normal')
         self.progress.stop()
+        
+        # Enable view button if we have scan data
+        if self.scan_data:
+            self.view_button.config(state='normal')
 
     def clear_log(self):
         self.log_text.delete(1.0, tk.END)
+
+    def view_keybindings(self):
+        """Open keybinding viewer window."""
+        if not self.scan_data:
+            messagebox.showerror("Error", "No scan data available. Please run a scan first.")
+            return
+
+        # Create viewer window
+        viewer = tk.Toplevel(self.root)
+        viewer.title("Keybinding Conflict Viewer")
+        viewer.geometry("900x600")
+
+        # Create treeview
+        tree_frame = ttk.Frame(viewer, padding="10")
+        tree_frame.grid(row=0, column=0, sticky=(tk.W, tk.E, tk.N, tk.S))
+
+        # Treeview with columns
+        columns = ("Key", "Mod", "File", "Line", "Context")
+        tree = ttk.Treeview(tree_frame, columns=columns, show="headings", height=20)
+        
+        # Configure columns
+        tree.heading("Key", text="Key")
+        tree.heading("Mod", text="Mod Name")
+        tree.heading("File", text="File")
+        tree.heading("Line", text="Line")
+        tree.heading("Context", text="Context")
+        
+        tree.column("Key", width=80, minwidth=60)
+        tree.column("Mod", width=150, minwidth=100)
+        tree.column("File", width=200, minwidth=150)
+        tree.column("Line", width=60, minwidth=50)
+        tree.column("Context", width=300, minwidth=200)
+
+        # Scrollbars
+        v_scrollbar = ttk.Scrollbar(tree_frame, orient=tk.VERTICAL, command=tree.yview)
+        h_scrollbar = ttk.Scrollbar(tree_frame, orient=tk.HORIZONTAL, command=tree.xview)
+        tree.configure(yscrollcommand=v_scrollbar.set, xscrollcommand=h_scrollbar.set)
+
+        tree.grid(row=0, column=0, sticky=(tk.W, tk.E, tk.N, tk.S))
+        v_scrollbar.grid(row=0, column=1, sticky=(tk.N, tk.S))
+        h_scrollbar.grid(row=1, column=0, sticky=(tk.W, tk.E))
+
+        # Status label
+        status_frame = ttk.Frame(viewer, padding="5")
+        status_frame.grid(row=1, column=0, sticky=(tk.W, tk.E))
+        
+        status_label = ttk.Label(status_frame, text="")
+        status_label.grid(row=0, column=0, sticky=tk.W)
+
+        # Populate treeview
+        self.populate_keybinding_tree(tree, status_label)
+
+        # Configure grid weights
+        viewer.columnconfigure(0, weight=1)
+        viewer.rowconfigure(0, weight=1)
+        tree_frame.columnconfigure(0, weight=1)
+        tree_frame.rowconfigure(0, weight=1)
+        status_frame.columnconfigure(0, weight=1)
+
+    def populate_keybinding_tree(self, tree, status_label):
+        """Populate the treeview with keybinding data."""
+        # Clear existing items
+        for item in tree.get_children():
+            tree.delete(item)
+
+        if not self.scan_data or 'aggregated' not in self.scan_data:
+            status_label.config(text="No keybinding data available")
+            return
+
+        aggregated = self.scan_data['aggregated']
+        conflict_count = 0
+        total_bindings = 0
+
+        # Sort keys for consistent display
+        for key in sorted(aggregated.keys()):
+            bindings = aggregated[key]
+            total_bindings += len(bindings)
+            
+            if len(bindings) > 1:
+                conflict_count += 1
+            
+            # Insert parent item for the key
+            parent_item = tree.insert("", tk.END, values=(key, f"{len(bindings)} mods", "", "", ""))
+            
+            # Color code conflicts
+            if len(bindings) > 1:
+                tree.item(parent_item, tags=("conflict",))
+            
+            # Insert child items for each binding
+            for binding in bindings:
+                mod_name = binding.get('mod_name', 'Unknown')
+                file_path = binding['file_path']
+                line_num = binding['line_number']
+                context = binding['context'][:100]  # Truncate long contexts
+                
+                tree.insert(parent_item, tk.END, values=("", mod_name, file_path, line_num, context))
+
+        # Configure tags for conflict highlighting
+        tree.tag_configure("conflict", background="lightcoral")
+
+        # Update status
+        status_text = f"Total unique keys: {len(aggregated)} | Conflicts: {conflict_count} | Total bindings: {total_bindings}"
+        status_label.config(text=status_text)
 
 
 def main():

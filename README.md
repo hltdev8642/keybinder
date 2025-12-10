@@ -44,6 +44,7 @@ The GUI provides an intuitive interface for:
 - Choosing output formats and location
 - Running scans with progress indication
 - Viewing logs and results
+- **Visualizing keybinding conflicts**: After scanning, use "View Keybindings" to see a detailed tree view of all detected keybinds, with conflict highlighting for keys used by multiple mods
 
 **Persistent Settings**: The GUI remembers your last used directories, output settings, and window position between sessions.
 
@@ -157,6 +158,13 @@ python test_scanner.py
 
 Sample test data is provided in the `sample_mod/` directory.
 
-## License
+## Keybinding Conflict Viewer
 
-MIT License
+After running a scan in the GUI, click "View Keybindings" to open a visual conflict resolver that shows:
+
+- **Hierarchical view**: Keys grouped with their associated mods and files
+- **Conflict highlighting**: Keys used by multiple mods are highlighted in red
+- **Detailed information**: Shows mod name, file path, line number, and code context for each binding
+- **Statistics**: Displays total unique keys, number of conflicts, and total bindings
+
+This helps you quickly identify and resolve keybinding conflicts between different Teardown mods.
