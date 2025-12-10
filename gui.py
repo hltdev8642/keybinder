@@ -350,11 +350,46 @@ class KeybindScannerGUI:
         # Create viewer window
         viewer = tk.Toplevel(self.root)
         viewer.title("Keybinding Conflict Viewer")
-        viewer.geometry("900x600")
+        viewer.geometry("1200x700")
+
+        # Create main container
+        main_frame = ttk.Frame(viewer)
+        main_frame.grid(row=0, column=0, sticky=(tk.W, tk.E, tk.N, tk.S))
+
+        # Filter panel at the top
+        filter_frame = ttk.LabelFrame(main_frame, text="Column Filters", padding="5")
+        filter_frame.grid(row=0, column=0, sticky=(tk.W, tk.E), pady=(0, 10))
+
+        # Filter variables
+        self.key_filter = tk.StringVar()
+        self.mod_filter = tk.StringVar()
+        self.status_filter = tk.StringVar()
+        self.file_filter = tk.StringVar()
+        self.line_filter = tk.StringVar()
+        self.context_filter = tk.StringVar()
+
+        # Create filter entries
+        filters = [
+            ("Key:", self.key_filter),
+            ("Mod Name:", self.mod_filter),
+            ("Status:", self.status_filter),
+            ("File:", self.file_filter),
+            ("Line:", self.line_filter),
+            ("Context:", self.context_filter)
+        ]
+
+        for i, (label_text, var) in enumerate(filters):
+            ttk.Label(filter_frame, text=label_text).grid(row=0, column=i*2, sticky=tk.W, padx=(0, 5))
+            entry = ttk.Entry(filter_frame, textvariable=var, width=15)
+            entry.grid(row=0, column=i*2+1, sticky=(tk.W, tk.E), padx=(0, 10))
+            entry.bind('<KeyRelease>', lambda e: self.apply_column_filters())
+
+        # Clear filters button
+        ttk.Button(filter_frame, text="Clear All Filters", command=self.clear_column_filters).grid(row=0, column=len(filters)*2, padx=(10, 0))
 
         # Create treeview
-        tree_frame = ttk.Frame(viewer, padding="10")
-        tree_frame.grid(row=0, column=0, sticky=(tk.W, tk.E, tk.N, tk.S))
+        tree_frame = ttk.Frame(main_frame, padding="10")
+        tree_frame.grid(row=1, column=0, sticky=(tk.W, tk.E, tk.N, tk.S))
 
         # Treeview with columns
         columns = ("Key", "Mod", "Status", "File", "Line", "Context")
@@ -385,24 +420,46 @@ class KeybindScannerGUI:
         h_scrollbar.grid(row=1, column=0, sticky=(tk.W, tk.E))
 
         # Status label
-        status_frame = ttk.Frame(viewer, padding="5")
-        status_frame.grid(row=1, column=0, sticky=(tk.W, tk.E))
+        status_frame = ttk.Frame(main_frame, padding="5")
+        status_frame.grid(row=2, column=0, sticky=(tk.W, tk.E))
         
         status_label = ttk.Label(status_frame, text="")
         status_label.grid(row=0, column=0, sticky=tk.W)
 
-        # Populate treeview
-        self.populate_keybinding_tree(tree, status_label)
+        # Store references for filtering
+        self.keybinding_tree = tree
+        self.keybinding_status_label = status_label
+
+        # Populate treeview initially
+        self.apply_column_filters()
 
         # Configure grid weights
         viewer.columnconfigure(0, weight=1)
         viewer.rowconfigure(0, weight=1)
+        main_frame.columnconfigure(0, weight=1)
+        main_frame.rowconfigure(1, weight=1)
         tree_frame.columnconfigure(0, weight=1)
         tree_frame.rowconfigure(0, weight=1)
+        filter_frame.columnconfigure(len(filters)*2+1, weight=1)
         status_frame.columnconfigure(0, weight=1)
 
-    def populate_keybinding_tree(self, tree, status_label):
-        """Populate the treeview with keybinding data."""
+    def apply_column_filters(self):
+        """Apply column filters and repopulate the treeview."""
+        if hasattr(self, 'keybinding_tree') and hasattr(self, 'keybinding_status_label'):
+            self.populate_keybinding_tree_filtered(self.keybinding_tree, self.keybinding_status_label)
+
+    def clear_column_filters(self):
+        """Clear all column filters."""
+        self.key_filter.set("")
+        self.mod_filter.set("")
+        self.status_filter.set("")
+        self.file_filter.set("")
+        self.line_filter.set("")
+        self.context_filter.set("")
+        self.apply_column_filters()
+
+    def populate_keybinding_tree_filtered(self, tree, status_label):
+        """Populate the treeview with keybinding data, applying column filters."""
         # Clear existing items
         for item in tree.get_children():
             tree.delete(item)
@@ -414,24 +471,65 @@ class KeybindScannerGUI:
         aggregated = self.scan_data['aggregated']
         conflict_count = 0
         total_bindings = 0
+        filtered_bindings = 0
+
+        # Get filter values (case-insensitive)
+        key_filter = self.key_filter.get().lower().strip()
+        mod_filter = self.mod_filter.get().lower().strip()
+        status_filter = self.status_filter.get().lower().strip()
+        file_filter = self.file_filter.get().lower().strip()
+        line_filter = self.line_filter.get().lower().strip()
+        context_filter = self.context_filter.get().lower().strip()
 
         # Sort keys for consistent display
         for key in sorted(aggregated.keys()):
             bindings = aggregated[key]
+            
+            # Filter bindings for this key
+            filtered_key_bindings = []
+            for binding in bindings:
+                mod_name = binding.get('mod_name', 'Unknown').lower()
+                mod_enabled = binding.get('mod_enabled', True)
+                status = "enabled" if mod_enabled else "disabled"
+                file_path = binding['file_path'].lower()
+                line_num = str(binding['line_number'])
+                context = binding['context'].lower()
+
+                # Apply filters
+                if key_filter and key_filter not in key.lower():
+                    continue
+                if mod_filter and mod_filter not in mod_name:
+                    continue
+                if status_filter and status_filter not in status:
+                    continue
+                if file_filter and file_filter not in file_path:
+                    continue
+                if line_filter and line_filter not in line_num:
+                    continue
+                if context_filter and context_filter not in context:
+                    continue
+
+                filtered_key_bindings.append(binding)
+
+            # Skip this key if no bindings match the filters
+            if not filtered_key_bindings:
+                continue
+
             total_bindings += len(bindings)
+            filtered_bindings += len(filtered_key_bindings)
             
             if len(bindings) > 1:
                 conflict_count += 1
             
             # Insert parent item for the key
-            parent_item = tree.insert("", tk.END, values=(key, f"{len(bindings)} mods", "", "", "", ""))
+            parent_item = tree.insert("", tk.END, values=(key, f"{len(filtered_key_bindings)} mods", "", "", "", ""))
             
             # Color code conflicts
             if len(bindings) > 1:
                 tree.item(parent_item, tags=("conflict",))
             
-            # Insert child items for each binding
-            for binding in bindings:
+            # Insert child items for each filtered binding
+            for binding in filtered_key_bindings:
                 mod_name = binding.get('mod_name', 'Unknown')
                 mod_enabled = binding.get('mod_enabled', True)
                 status = "Enabled" if mod_enabled else "Disabled"
@@ -445,7 +543,21 @@ class KeybindScannerGUI:
         tree.tag_configure("conflict", background="lightcoral")
 
         # Update status
-        status_text = f"Total unique keys: {len(aggregated)} | Conflicts: {conflict_count} | Total bindings: {total_bindings}"
+        total_unique_keys = len(aggregated)
+        visible_keys = len([k for k in aggregated.keys() if any(
+            (not key_filter or key_filter in k.lower()) and
+            any(
+                (not mod_filter or mod_filter in binding.get('mod_name', 'Unknown').lower()) and
+                (not status_filter or status_filter in ("enabled" if binding.get('mod_enabled', True) else "disabled")) and
+                (not file_filter or file_filter in binding['file_path'].lower()) and
+                (not line_filter or line_filter in str(binding['line_number'])) and
+                (not context_filter or context_filter in binding['context'].lower())
+                for binding in aggregated[k]
+            )
+            for k in [k]  # Just to make it a single-item list for the any() check
+        )])
+        
+        status_text = f"Total unique keys: {total_unique_keys} | Visible keys: {visible_keys} | Conflicts: {conflict_count} | Filtered bindings: {filtered_bindings}"
         status_label.config(text=status_text)
 
     def view_binding_map(self):
